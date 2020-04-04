@@ -1,6 +1,16 @@
 # magicum
 
-A Clojure, _libre_ Magic: The Gathering rules engine implementation.
+> **magicum**
+> 1. Latin: the nominative _neuter_ singular of magicus.
+>
+> **magicus**
+>  1. magic, magical.
+>
+> _from [Wiktionary, the free dictionary](https://en.wiktionary.org/wiki/magicus#Latin)_
+
+`magicum` is a [Clojure](https://clojure.org/), _libre_ [Magic: The Gathering](https://magic.wizards.com/) game rules engine implementation.
+
+It is currently in a very early implementation stage.
 
 
 ## Download
@@ -24,6 +34,13 @@ FIXME: listing of options this app accepts.
 ### Bugs
 
 At this point, probably too many. To be discovered! :-)
+
+
+## Pronunciation
+
+[IPA](https://en.wiktionary.org/wiki/Wiktionary:International_Phonetic_Alphabet)^([key](https://en.wiktionary.org/wiki/Appendix:Latin_pronunciation)): _/'ma.ʝi.kum/, [ˈma.ʝɪ.kʊm]_
+
+Whereas the original [_Classical Latin_](https://en.wikipedia.org/wiki/Classical_Latin) word should be pronounced _/ˈma.ɡi.kum/_ or _[ˈma.ɡɪ.kʊm]_, as the origin language of the original game's name is English, we use an English-like pronunciation.
 
 
 ## Acknowledgements
