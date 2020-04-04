@@ -17,19 +17,23 @@ It is currently in a very early implementation stage.
 
 https://github.com/allentiak/magicum.
 
+
 ## Usage
 
 FIXME: explanation
 
     $ java -jar magicum-0.1.0-standalone.jar [args]
 
+
 ## Options
 
 FIXME: listing of options this app accepts.
 
+
 ## Examples
 
-...
+FIXME: app invocation examples.
+
 
 ### Bugs
 
