@@ -8,7 +8,7 @@
 >
 > _from [Wiktionary, the free dictionary](https://en.wiktionary.org/wiki/magicus#Latin)_
 
-`magicum` is a [Clojure](https://clojure.org/), _libre_ [Magic: The Gathering](https://magic.wizards.com/) game rules engine implementation.
+`magicum` is a _libre_ [Magic: The Gathering](https://magic.wizards.com/) game rules engine implementation, written in [Clojure](https://clojure.org/).
 
 It is currently in a very early implementation stage.
 
