@@ -35,7 +35,7 @@ FIXME: listing of options this app accepts.
 FIXME: app invocation examples.
 
 
-### Bugs
+## Bugs
 
 At this point, probably too many. To be discovered! :-)
 
