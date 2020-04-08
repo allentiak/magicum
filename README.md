@@ -40,6 +40,13 @@ FIXME: app invocation examples.
 At this point, probably too many. To be discovered! :-)
 
 
+## Design Choices
+
+- Use advanced programming techniques, such as formal specifications, and property-based and generative testing as much as possible.
+
+  Luckily, Clojure comes "with batteries ~included~ ready-to-plug-when-needed", so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
+
+
 ## Pronunciation
 
 [IPA](https://en.wiktionary.org/wiki/Wiktionary:International_Phonetic_Alphabet)^([key](https://en.wiktionary.org/wiki/Appendix:Latin_pronunciation)): _/'ma.ʝi.kum/, [ˈma.ʝɪ.kʊm]_
