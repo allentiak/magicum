@@ -40,18 +40,18 @@ FIXME: app invocation examples.
 At this point, probably too many. To be discovered! :-)
 
 
-## Design Choices
-
-- Use advanced programming techniques, such as formal specifications, and property-based and generative testing as much as possible.
-
-  Luckily, Clojure comes "with batteries ~included~ ready-to-plug-when-needed", so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
-
-
 ## Pronunciation
 
 [IPA](https://en.wiktionary.org/wiki/Wiktionary:International_Phonetic_Alphabet)^([key](https://en.wiktionary.org/wiki/Appendix:Latin_pronunciation)): _/'ma.ʝi.kum/, [ˈma.ʝɪ.kʊm]_
 
 Whereas the original [_Classical Latin_](https://en.wikipedia.org/wiki/Classical_Latin) word should be pronounced _/ˈma.ɡi.kum/_ or _[ˈma.ɡɪ.kʊm]_, as the origin language of the original game's name is English, we use an English-like pronunciation.
+
+
+## Design Choices
+
+- Use advanced programming techniques, such as formal specifications, and property-based and generative testing as much as possible.
+
+  Luckily, Clojure comes "with batteries ~included~ ready-to-plug-when-needed", so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
 
 
 ## Acknowledgements
