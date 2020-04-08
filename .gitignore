@@ -3,5 +3,6 @@
 /checkouts
 *.jar
 *.class
+.cpcache
 /.nrepl-port
 /.nrepl-history
