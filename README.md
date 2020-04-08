@@ -54,6 +54,11 @@ Whereas the original [_Classical Latin_](https://en.wikipedia.org/wiki/Classical
   Luckily, Clojure comes "with batteries ~included~ ready-to-plug-when-needed", so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
 
 
+## CI/CD
+
+FIXME: add CI/CD setup data.
+
+
 ## Acknowledgements
 
 This program is inspired by other Magic: The Gathering _libre_ implementations for the JVM platform. More specifically, by [Magarena](https://github.com/magarena/magarena/), [XMage](https://github.com/magefree/mage), and [Matag](https://github.com/antonioalonzi/matag).
