@@ -10,7 +10,23 @@
 
 `magicum` is a _libre_ [Magic: The Gathering](https://magic.wizards.com/) game rules engine implementation, written in [Clojure](https://clojure.org/).
 
-It is currently in a very early implementation stage.
+This project is currently in a very early development stage, so there is not much functionality to be seen... yet ;-)
+
+
+## Pronunciation
+
+[IPA](https://en.wiktionary.org/wiki/Wiktionary:International_Phonetic_Alphabet)^([key](https://en.wiktionary.org/wiki/Appendix:Latin_pronunciation)): _/'ma.ʝi.kum/, [ˈma.ʝɪ.kʊm]_
+
+Whereas the original [_Classical Latin_](https://en.wikipedia.org/wiki/Classical_Latin) word should be pronounced _/ˈma.ɡi.kum/_ or _[ˈma.ɡɪ.kʊm]_, as the origin language of the original game's name is English, we use an English-like pronunciation.
+
+
+## Release Information
+
+This project follows the version scheme `MAJOR.MINOR.COMMITS`, where `MAJOR` and `MINOR` provide some relative indication of the size of the change, but do not follow semantic versioning. `COMMITS` is an ever-increasing counter of commits since the beginning of this repository.
+
+In general, all changes endeavor to be non-breaking (by moving to new names rather than by breaking existing names). For a more detailed rationale, please refer to [Rich Hickey's "spec-ulation Keynote"](https://www.youtube.com/watch?v=oyLBGkS5ICk) from [Clojure/conj 2016](https://2016.clojure-conj.org/).
+
+Latest release: (none yet)
 
 
 ## Download
@@ -22,39 +38,34 @@ https://github.com/allentiak/magicum.
 
 FIXME: explanation
 
-    $ java -jar magicum-0.1.0-standalone.jar [args]
+    $ java -jar magicum-x.y.z-standalone.jar [args]
 
 
-## Options
+### Options
 
 FIXME: listing of options this app accepts.
 
 
-## Examples
+### Examples
 
 FIXME: app invocation examples.
 
 
-## Bugs
+### Bugs
 
 At this point, probably too many. To be discovered! :-)
 
 
-## Pronunciation
+## Development
 
-[IPA](https://en.wiktionary.org/wiki/Wiktionary:International_Phonetic_Alphabet)^([key](https://en.wiktionary.org/wiki/Appendix:Latin_pronunciation)): _/'ma.ʝi.kum/, [ˈma.ʝɪ.kʊm]_
-
-Whereas the original [_Classical Latin_](https://en.wikipedia.org/wiki/Classical_Latin) word should be pronounced _/ˈma.ɡi.kum/_ or _[ˈma.ɡɪ.kʊm]_, as the origin language of the original game's name is English, we use an English-like pronunciation.
-
-
-## Design Choices
+### Design Choices
 
 - Use advanced programming techniques, such as formal specifications, and property-based and generative testing as much as possible.
 
-  Luckily, Clojure comes "with batteries ~included~ ready-to-plug-when-needed", so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
+  Luckily, [Clojure comes "with batteries ~included~ ready-to-plug-when-needed"](https://clojure.org/news/2012/02/17/clojure-governance), so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
 
 
-## CI/CD
+### CI/CD
 
 FIXME: add CI/CD setup data.
 
