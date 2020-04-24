@@ -1,0 +1,18 @@
+name: tools.deps builder
+
+on: push
+jobs:
+  build:
+    name: Build project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker container
+        uses: docker://clojure:tools-deps
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: (Smoke) Build with Clojure CLI
+        run: echo "Hi!"
+            using: 'docker'
+            image: 'Dockerfile'
+            run: echo "Hi!"
+        #run: clojure -Sdescribe
