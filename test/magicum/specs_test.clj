@@ -1,6 +1,6 @@
-(ns magicum.magicum-test
+(ns magicum.specs-test
   (:require [clojure.test :refer :all]
-            [magicum.magicum :refer :all]))
+            [magicum.specs :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."
