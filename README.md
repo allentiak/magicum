@@ -74,6 +74,8 @@ FIXME: add CI/CD setup data.
 
 This program is inspired by other Magic: The Gathering _libre_ implementations for the JVM platform. More specifically, by [Magarena](https://github.com/magarena/magarena/), [XMage](https://github.com/magefree/mage), and [Matag](https://github.com/antonioalonzi/matag).
 
+The actual specs implementation is based on Robert Stuttaford's, and it is used with express permission from the author. See [doc/ABOUT_THE_SPECS.md](doc/ABOUT_THE_SPECS.md)
+
 All trademarks and/or registered trademarks mentioned in this program and/or its documentation
 are the property of their own owners. We are not affiliated in any way with the copyright owners of
 Magic: The Gathering, nor we claim any copyright over their game, their implementations, their art assets or any other kind of intellectual wealth.
