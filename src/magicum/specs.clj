@@ -3,9 +3,15 @@
   (:require [clojure.spec.alpha :as s]
             [clojure.set :as set]))
 
-(s/def ::set string?)
+(def ^:private non-empty-string? (s/and string? not-empty))
+
+(s/def ::artist non-empty-string?)
+(s/def ::set non-empty-string?)
 (s/def ::set-number pos-int?)
-(s/def ::artist string?)
+
+(s/explain ::artist "trsau")
+(s/explain ::set "rato")
+(s/explain ::set-number 1)
 
 (s/def ::metadata (s/keys :req-un [::set ::set-number ::artist]))
 
