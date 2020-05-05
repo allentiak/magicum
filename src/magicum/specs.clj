@@ -27,7 +27,7 @@
 (s/def ::base-card (s/keys :req-un [::name ::types ::metadata ::rules]
                            :opt-un [::sub-type ::legendary? ::world?]))
 
-#_ (->> (s/exercise ::base-card) (take 5))
+(->> (s/exercise ::base-card) (take 5))
 
 (s/def ::amount pos-int?)
 (s/def ::color #{:white :blue :black :red :green})
