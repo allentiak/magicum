@@ -3,21 +3,21 @@
   (:require [clojure.spec.alpha :as s]
             [clojure.set :as set]))
 
-(def ^:private non-empty-string? (s/and string? not-empty))
 
-(s/def ::artist non-empty-string?)
-(s/def ::set non-empty-string?)
+(s/def ::artist (s/and string? seq))
+(s/def ::set (s/and string? seq))
 (s/def ::set-number pos-int?)
-
-(s/explain ::artist "trsau")
-(s/explain ::set "rato")
-(s/explain ::set-number 1)
 
 (s/def ::metadata (s/keys :req-un [::set ::set-number ::artist]))
 
-(s/def ::name string?)
+;; (s/exercise ::metadata)
+
+(s/def ::name (s/and string? seq))
 
 (s/def ::type #{:land :creature :artifact :enchantment :sorcery :instant :planeswalker})
+
+;; (s/exercise ::type)
+
 (s/def ::types (s/and set? (s/+ ::type)))
 (s/def ::sub-type ::type)
 (s/def ::rules string?)
