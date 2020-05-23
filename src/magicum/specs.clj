@@ -25,6 +25,21 @@
 
 ;; (s/exercise ::type)
 
+(s/def
+  ^{:rule "205.3g"
+    :revision "2020.04.17"}
+  ::artifact-type #{:clue :contraption :equipment :food :fortification :gold :treasure :vehicle})
+
+(s/def
+  ^{:rule: "205.3h"
+    :revision "2020.04.17"}
+  ::enchantment-type #{:aura :cartouche :curse :saga :shrine})
+
+(s/def
+  ^{:rule "205.3i"
+    :revision "2020.04.17"}
+  ::land-type #{:desert :forest :gate :island :lair :locus :mine :mountain :plains :power-plant :swamp :tower :urza's})
+
 (s/def ::types (s/and set? (s/+ ::type)))
 (s/def ::sub-type ::type)
 (s/def ::rules string?)
