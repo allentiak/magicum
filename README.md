@@ -64,6 +64,7 @@ At this point, probably too many. To be discovered! :-)
 
   Luckily, [Clojure comes "with batteries ~included~ ready-to-plug-when-needed"](https://clojure.org/news/2012/02/17/clojure-governance), so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
 
+- Base the aforementioned specifications on the most recent version of the Magic Comprehensive Rules, as published by the Magic copyright holders. As a reference, you will find a copy of the latest version used in [/resources/third-party](/resources/third-party).
 
 ### CI/CD
 
@@ -75,6 +76,8 @@ FIXME: add CI/CD setup data.
 This program is inspired by other Magic: The Gathering _libre_ implementations for the JVM platform. More specifically, by (in discovery order) [Magarena](https://github.com/magarena/magarena/), [XMage](https://github.com/magefree/mage), [Matag](https://github.com/antonioalonzi/matag), and [Forge](https://git.cardforge.org/core-developers/forge).
 
 The domain specs are based on Robert Stuttaford's and Adam Frey's work, with their express permission to use their code as I see fit. For more details, see [doc/ABOUT_THE_SPECS.md](doc/ABOUT_THE_SPECS.md)
+
+As a reference, you will find a copy of the latest Magic Comprehensive Rules document on which the specs are based in the folder [/resources/third-party](/resources/third-party).
 
 All trademarks and/or registered trademarks mentioned in this program and/or its documentation
 are the property of their own owners. We are not affiliated in any way with the copyright owners of
@@ -99,7 +102,6 @@ License version 1.0), the licensors of this Program grant you additional
 permission to convey the resulting work. Corresponding Source for a
 non-source form of such a combination shall include the source code for
 the parts of Clojure used as well as that of the covered work.
-
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
