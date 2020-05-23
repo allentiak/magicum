@@ -17,6 +17,48 @@
     :revision "2020.04.17"}
   ::mana-type #{:white :blue :black :red :green :colorless})
 
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::primary-mana-symbol {:w :white, :u :blue, :b :black, :r :red, :g :green})
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::variable-mana-symbol #{:x})
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::colorless-mana-symbol {:c :colorless})
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::hybrid-mana-symbol #{:wu :wb :ub :ur :br :bg :rg :rw :gw :gu})
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::monocolored-hybrid-mana-symbol #{:2w :2u :2b :2r :2g})
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::phyrexian-mana-symbol #{:wp :up :bp :rp :gp})
+
+(s/def
+   ^{:rule "107.4"
+     :revision "2020.04.17"}
+   ::snow-mana-symbol #{:s})
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::mana-symbol (conj ::primary-mana-symbol ::variable-mana-symbol ::colorless-mana-symbol ::hybrid-mana-symbol ::monocolored-hybrid-mana-symbol ::phyrexian-mana-symbol ::snow-mana-symbol))
+
+
 (s/def
   ^{:rule "205.2a"
     :revision "2020.04.17"}
