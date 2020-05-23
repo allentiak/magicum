@@ -40,6 +40,11 @@
     :revision "2020.04.17"}
   ::land-type #{:desert :forest :gate :island :lair :locus :mine :mountain :plains :power-plant :swamp :tower :urza's})
 
+(s/def
+  ^{:rule "205.4a"
+    :revision "2020.04.17"}
+  ::supertype #{:basic :legendary :ongoing :snow :world})
+
 (s/def ::types (s/and set? (s/+ ::type)))
 (s/def ::sub-type ::type)
 (s/def ::rules string?)
