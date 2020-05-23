@@ -14,6 +14,10 @@
 
 (s/def ::name (s/and string? seq))
 
+;; metadata:
+;; :rule nnn.nb (comprehensive rule) on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
+;; :revison yyyy.mm.dd (last updated) version of the CRs used to create this element
+
 (s/def ::type #{:land :creature :artifact :enchantment :sorcery :instant :planeswalker})
 
 ;; (s/exercise ::type)
