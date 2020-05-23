@@ -3,6 +3,9 @@
   (:require [clojure.spec.alpha :as s]
             [clojure.set :as set]))
 
+;; metadata:
+;; :rule nnn.nb - comprehensive rule on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
+;; :revison yyyy.mm.dd - version of the CRs used to create this element.
 
 (s/def ::artist (s/and string? seq))
 (s/def ::set (s/and string? seq))
@@ -13,10 +16,6 @@
 ;; (s/exercise ::metadata)
 
 (s/def ::name (s/and string? seq))
-
-;; metadata:
-;; :rule nnn.nb (comprehensive rule) on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
-;; :revison yyyy.mm.dd (last updated) version of the CRs used to create this element
 
 (s/def
   ^{:rule "205.2a"
