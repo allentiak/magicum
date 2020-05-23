@@ -7,16 +7,6 @@
 ;; :rule nnn.nb - comprehensive rule on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
 ;; :revison yyyy.mm.dd - version of the CRs used to create this element.
 
-(s/def ::artist (s/and string? seq))
-(s/def ::set (s/and string? seq))
-(s/def ::set-number pos-int?)
-
-(s/def ::metadata (s/keys :req-un [::set ::set-number ::artist]))
-
-;; (s/exercise ::metadata)
-
-(s/def ::name (s/and string? seq))
-
 (s/def
   ^{:rule "205.2a"
     :revision "2020.04.17"}
@@ -54,7 +44,17 @@
     :revision "2020.04.17"}
   ::supertype #{:basic :legendary :ongoing :snow :world})
 
+
+****************** OLD CODE HERE **************
+
+(s/def ::artist (s/and string? seq))
+(s/def ::set (s/and string? seq))
+(s/def ::set-number pos-int?)
+(s/def ::metadata (s/keys :req-un [::set ::set-number ::artist]))
+;; (s/exercise ::metadata)
+(s/def ::name (s/and string? seq))
 (s/def ::types (s/and set? (s/+ ::type)))
+(s/exercise ::types)
 (s/def ::sub-type ::type)
 (s/def ::rules string?)
 (s/def ::legendary? boolean?)
