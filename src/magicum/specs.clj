@@ -8,6 +8,16 @@
 ;; :revison yyyy.mm.dd - version of the CRs used to create this element.
 
 (s/def
+  ^{:rule "106.1a"
+    :revision "2020.04.17"}
+  ::mana-color #{:white :blue :black :red :green})
+
+(s/def
+  ^{:rule "106.1b"
+    :revision "2020.04.17"}
+  ::mana-type #{:white :blue :black :red :green :colorless})
+
+(s/def
   ^{:rule "205.2a"
     :revision "2020.04.17"}
   ::type #{:artifact :conspiracy :creature :enchantment :instant :land :phenomenon :plane :planeswalker :scheme :sorcery :tribal :vanguard})
