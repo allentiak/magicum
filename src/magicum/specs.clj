@@ -41,6 +41,11 @@
   ::land-type #{:desert :forest :gate :island :lair :locus :mine :mountain :plains :power-plant :swamp :tower :urza's})
 
 (s/def
+  ^{:rule "205.3k"
+    :revision "2020.04.17"}
+  ::spell-type #{:adventure :arcane :trap})
+
+(s/def
   ^{:rule "205.4a"
     :revision "2020.04.17"}
   ::supertype #{:basic :legendary :ongoing :snow :world})
