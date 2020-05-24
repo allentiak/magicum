@@ -73,6 +73,15 @@
     :revision "2020.04.17"}
   ::mana-symbol (conj ::primary-mana-symbol ::generic-mana-symbol ::colorless-mana-symbol ::hybrid-mana-symbol ::monocolored-hybrid-mana-symbol ::phyrexian-mana-symbol ::snow-mana-symbol))
 
+(s/def
+  ^{:rule "107.5"
+    :revision "2020.04.17"}
+  ::tap-symbol #{:t})
+
+(s/def
+  ^{:rule "107.6"
+    :revision "2020.04.17"}
+  ::untap-symbol #{:q})
 
 (s/def
   ^{:rule "205.2a"
