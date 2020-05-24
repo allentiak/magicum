@@ -120,9 +120,24 @@
   ::basic-land-type #{:forest :island :mountain :plains :swamp})
 
 (s/def
+  ^{:rule "205.3j"
+    :revision "2020.04.17"}
+  ::planeswalker-type #{:ajani :aminatou :angrath :arlinn :ashiok :bolas :calix :chandra :dack :daretti :davriel :domri :dovin :elspeth :estrid :freyalise :garruk :gideon :huatli :jace :jaya :karn :kasmina :kaya :kiora :koth :liliana :lukka :nahiri :narset :nissa :nixilis :oko :ral :rowan :saheeli :samut :sarkhan :serra :sorin :tamiyo :teferi :teyo :tezzeret :tibalt :ugin :venser :vivien :vraska :will :windgrace :wrenn :xenagos :yanggu :yanling})
+
+(s/def
   ^{:rule "205.3k"
     :revision "2020.04.17"}
   ::spell-type #{:adventure :arcane :trap})
+
+(s/def
+  ^{:rule "205.3m"
+    :revision "2020.04.17"}
+  ::creature-type #{:advisor :aetherborn :ally :angel :antelope :ape :archer :archon :army :artificer :assassin :assembly-worker :atog :aurochs :avatar :azra :badger :barbarian :basilisk :bat :bear :beast :beeble :berserker :bird :blinkmoth :boar :bringer :brushwagg :camarid :camel :caribou :carrier :cat :centaur :cephalid :chimera :citizen :cleric :cockatrice :construct :coward :crab :crocodile :cyclops :dauthi :demigod :demon :deserter :devil :dinosaur :djinn :dragon :drake :dreadnought :drone :druid :dryad :dwarf :efreet :egg :elder :eldrazi :elemental :elephant :elf :elk :eye :faerie :ferret :fish :flagbearer :fox :frog :fungus :gargoyle :germ :giant :gnome :goat :goblin :god :golem :gorgon :graveborn :gremlin :griffin :hag :harpy :hellion :hippo :hippogriff :homarid :homunculus :horror :horse :hound :human :hydra :hyena :illusion :imp :incarnation :insect :jackal :jellyfish :juggernaut :kavu :kirin :kithkin :knight :kobold :kor :kraken :lamia :lammasu :leech :leviathan :lhurgoyf :licid :lizard :manticore :masticore :mercenary :merfolk :metathran :minion :minotaur :mole :monger :mongoose :monk :monkey :moonfolk :mouse :mutant :myr :mystic :naga :nautilus :nephilim :nightmare :nightstalker :ninja :noble :noggle :nomad :nymph :octopus :ogre :ooze :orb :orc :orgg :otter :ouphe :ox :oyster :pangolin :peasant :pegasus :pentavite :pest :phelddagrif :phoenix :pilot :pincher :pirate :plant :praetor :prism :processor :rabbit :rat :rebel :reflection :rhino :rigger :rogue :sable :salamander :samurai :sand :saproling :satyr :scarecrow :scion :scorpion :scout :sculpture :serf :serpent :servo :shade :shaman :shapeshifter :shark :sheep :siren :skeleton :slith :sliver :slug :snake :soldier :soltari :spawn :specter :spellshaper :sphinx :spider :spike :spirit :splinter :sponge :squid :squirrel :starfish :surrakar :survivor :tentacle :tetravite :thalakos :thopter :thrull :treefolk :trilobite :triskelavite :troll :turtle :unicorn :vampire :vedalken :viashino :volver :wall :warlock :warrior :weird :werewolf :whale :wizard :wolf :wolverine :wombat :worm :wraith :wurm :yeti :zombie :zubera})
+
+(s/def
+  ^{:rule "205.3n"
+    :revision "2020.04.17"}
+  ::planar-type #{:alara :arkhos :azgol :belenon :bolas’s-meditation-realm :dominaria :equilor :ergamon :fabacin :innistrad :iquatana :ir :kaldheim :kamigawa :karsus :kephalai :kinshala :kolbahan :kyneth :lorwyn :luvion :mercadia :mirrodin :moag :mongseng :muraganda :new-phyrexia :phyrexia :pyrulea :rabiah :rath :ravnica :regatha :segovia :serra’s-realm :shadowmoor :shandalar :ulgrotha :valla :vryn :wildfire :xerex :zendikar})
 
 (s/def
   ^{:rule "205.4a"
