@@ -84,6 +84,16 @@
   ::untap-symbol #{:q})
 
 (s/def
+  ^{:rule "107.11"
+    :revision "2020.04.17"}
+  ::planeswalker-symbol #{:pw})
+
+(s/def
+  ^{:rule "107.12"
+    :revision "2020.04.17"}
+  ::chaos-symbol #{:chaos})
+
+(s/def
   ^{:rule "205.2a"
     :revision "2020.04.17"}
   ::type #{:artifact :conspiracy :creature :enchantment :instant :land :phenomenon :plane :planeswalker :scheme :sorcery :tribal :vanguard})
