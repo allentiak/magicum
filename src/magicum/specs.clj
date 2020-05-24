@@ -1,7 +1,6 @@
 (ns magicum.specs
   (:gen-class)
-  (:require [clojure.spec.alpha :as s]
-            [clojure.set :as set]))
+  (:require [clojure.spec.alpha :as s]))
 
 ;; metadata:
 ;; :rule nnn.nb - comprehensive rule on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
