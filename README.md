@@ -58,13 +58,17 @@ At this point, probably too many. To be discovered! :-)
 
 ## Development
 
-### Design Choices
+### Design Approach
 
 - Use advanced programming techniques, such as formal specifications, and property-based and generative testing as much as possible.
 
   Luckily, [Clojure comes "with batteries ~included~ ready-to-plug-when-needed"](https://clojure.org/news/2012/02/17/clojure-governance), so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
 
 - Base the aforementioned specifications on the most recent version of the Magic Comprehensive Rules, as published by the Magic copyright holders. As a reference, you will find a copy of the latest version used in [/resources/third-party](/resources/third-party).
+
+- Stand on the shoulders of giants: use Systematic Program Design.
+
+Systematic Program Design is explained in depth in ["How to Design Programs, Second Edition"](https://htpd.org), by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, and Shriram Krishnamurthi.
 
 ### CI/CD
 
