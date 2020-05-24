@@ -31,6 +31,11 @@
 (s/def
   ^{:rule "107.4"
     :revision "2020.04.17"}
+  ::generic-mana-symbol (s/or ::variable-mana-symbol nat-int?))
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
   ::colorless-mana-symbol {:c :colorless})
 
 (s/def
@@ -46,7 +51,17 @@
 (s/def
   ^{:rule "107.4"
     :revision "2020.04.17"}
-  ::phyrexian-mana-symbol #{:wp :up :bp :rp :gp})
+  ::colored-phyrexian-mana-symbol #{:wp :up :bp :rp :gp})
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::generic-phyrexian-mana-symbol #{:p})
+
+(s/def
+  ^{:rule "107.4"
+    :revision "2020.04.17"}
+  ::phyrexian-mana-symbol (conj ::generic-phyrexian-mana-symbol ::colored-phyrexian-mana-symbol))
 
 (s/def
    ^{:rule "107.4"
@@ -56,7 +71,7 @@
 (s/def
   ^{:rule "107.4"
     :revision "2020.04.17"}
-  ::mana-symbol (conj ::primary-mana-symbol ::variable-mana-symbol ::colorless-mana-symbol ::hybrid-mana-symbol ::monocolored-hybrid-mana-symbol ::phyrexian-mana-symbol ::snow-mana-symbol))
+  ::mana-symbol (conj ::primary-mana-symbol ::generic-mana-symbol ::colorless-mana-symbol ::hybrid-mana-symbol ::monocolored-hybrid-mana-symbol ::phyrexian-mana-symbol ::snow-mana-symbol))
 
 
 (s/def
