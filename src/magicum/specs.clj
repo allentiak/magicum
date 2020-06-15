@@ -3,145 +3,145 @@
   (:require [clojure.spec.alpha :as s]))
 
 ;; metadata:
-;; :rule nnn.nb - comprehensive rule on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
-;; :revison yyyy.mm.dd - version of the CRs used to create this element.
+;; :rule nnn.nb - Comprehensive Rule on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
+;; :version yyyy.mm.dd - date of the Comprehensive Rules document used to create this element.
 
 (s/def
   ^{:rule "106.1a"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::mana-color #{:white :blue :black :red :green})
 
 (s/def
   ^{:rule "106.1b"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::mana-type #{:white :blue :black :red :green :colorless})
 
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::primary-mana-symbol {:w :white, :u :blue, :b :black, :r :red, :g :green})
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::variable-mana-symbol #{:x})
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::generic-mana-symbol (s/or ::variable-mana-symbol nat-int?))
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::colorless-mana-symbol {:c :colorless})
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::hybrid-mana-symbol #{:wu :wb :ub :ur :br :bg :rg :rw :gw :gu})
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::monocolored-hybrid-mana-symbol #{:2w :2u :2b :2r :2g})
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::colored-phyrexian-mana-symbol #{:wp :up :bp :rp :gp})
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::generic-phyrexian-mana-symbol #{:p})
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::phyrexian-mana-symbol (conj ::generic-phyrexian-mana-symbol ::colored-phyrexian-mana-symbol))
 
 (s/def
    ^{:rule "107.4"
-     :revision "2020.04.17"}
+     :version "2020.06.01"}
    ::snow-mana-symbol #{:s})
 
 (s/def
   ^{:rule "107.4"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::mana-symbol (conj ::primary-mana-symbol ::generic-mana-symbol ::colorless-mana-symbol ::hybrid-mana-symbol ::monocolored-hybrid-mana-symbol ::phyrexian-mana-symbol ::snow-mana-symbol))
 
 (s/def
   ^{:rule "107.5"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::tap-symbol #{:t})
 
 (s/def
   ^{:rule "107.6"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::untap-symbol #{:q})
 
 (s/def
   ^{:rule "107.11"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::planeswalker-symbol #{:pw})
 
 (s/def
   ^{:rule "107.12"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::chaos-symbol #{:chaos})
 
 (s/def
   ^{:rule "205.2a"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::type #{:artifact :conspiracy :creature :enchantment :instant :land :phenomenon :plane :planeswalker :scheme :sorcery :tribal :vanguard})
 
 ;; (s/exercise ::type)
 
 (s/def
   ^{:rule "205.3g"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::artifact-type #{:clue :contraption :equipment :food :fortification :gold :treasure :vehicle})
 
 (s/def
   ^{:rule: "205.3h"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::enchantment-type #{:aura :cartouche :curse :saga :shrine})
 
 (s/def
   ^{:rule "205.3i"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::land-type #{:desert :forest :gate :island :lair :locus :mine :mountain :plains :power-plant :swamp :tower :urza's})
 
 (s/def
   ^{:rule "205.3i"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::basic-land-type #{:forest :island :mountain :plains :swamp})
 
 (s/def
   ^{:rule "205.3j"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::planeswalker-type #{:ajani :aminatou :angrath :arlinn :ashiok :bolas :calix :chandra :dack :daretti :davriel :domri :dovin :elspeth :estrid :freyalise :garruk :gideon :huatli :jace :jaya :karn :kasmina :kaya :kiora :koth :liliana :lukka :nahiri :narset :nissa :nixilis :oko :ral :rowan :saheeli :samut :sarkhan :serra :sorin :tamiyo :teferi :teyo :tezzeret :tibalt :ugin :venser :vivien :vraska :will :windgrace :wrenn :xenagos :yanggu :yanling})
 
 (s/def
   ^{:rule "205.3k"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::spell-type #{:adventure :arcane :trap})
 
 (s/def
   ^{:rule "205.3m"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::creature-type #{:advisor :aetherborn :ally :angel :antelope :ape :archer :archon :army :artificer :assassin :assembly-worker :atog :aurochs :avatar :azra :badger :barbarian :basilisk :bat :bear :beast :beeble :berserker :bird :blinkmoth :boar :bringer :brushwagg :camarid :camel :caribou :carrier :cat :centaur :cephalid :chimera :citizen :cleric :cockatrice :construct :coward :crab :crocodile :cyclops :dauthi :demigod :demon :deserter :devil :dinosaur :djinn :dragon :drake :dreadnought :drone :druid :dryad :dwarf :efreet :egg :elder :eldrazi :elemental :elephant :elf :elk :eye :faerie :ferret :fish :flagbearer :fox :frog :fungus :gargoyle :germ :giant :gnome :goat :goblin :god :golem :gorgon :graveborn :gremlin :griffin :hag :harpy :hellion :hippo :hippogriff :homarid :homunculus :horror :horse :hound :human :hydra :hyena :illusion :imp :incarnation :insect :jackal :jellyfish :juggernaut :kavu :kirin :kithkin :knight :kobold :kor :kraken :lamia :lammasu :leech :leviathan :lhurgoyf :licid :lizard :manticore :masticore :mercenary :merfolk :metathran :minion :minotaur :mole :monger :mongoose :monk :monkey :moonfolk :mouse :mutant :myr :mystic :naga :nautilus :nephilim :nightmare :nightstalker :ninja :noble :noggle :nomad :nymph :octopus :ogre :ooze :orb :orc :orgg :otter :ouphe :ox :oyster :pangolin :peasant :pegasus :pentavite :pest :phelddagrif :phoenix :pilot :pincher :pirate :plant :praetor :prism :processor :rabbit :rat :rebel :reflection :rhino :rigger :rogue :sable :salamander :samurai :sand :saproling :satyr :scarecrow :scion :scorpion :scout :sculpture :serf :serpent :servo :shade :shaman :shapeshifter :shark :sheep :siren :skeleton :slith :sliver :slug :snake :soldier :soltari :spawn :specter :spellshaper :sphinx :spider :spike :spirit :splinter :sponge :squid :squirrel :starfish :surrakar :survivor :tentacle :tetravite :thalakos :thopter :thrull :treefolk :trilobite :triskelavite :troll :turtle :unicorn :vampire :vedalken :viashino :volver :wall :warlock :warrior :weird :werewolf :whale :wizard :wolf :wolverine :wombat :worm :wraith :wurm :yeti :zombie :zubera})
 
 (s/def
   ^{:rule "205.3n"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::planar-type #{:alara :arkhos :azgol :belenon :bolas’s-meditation-realm :dominaria :equilor :ergamon :fabacin :innistrad :iquatana :ir :kaldheim :kamigawa :karsus :kephalai :kinshala :kolbahan :kyneth :lorwyn :luvion :mercadia :mirrodin :moag :mongseng :muraganda :new-phyrexia :phyrexia :pyrulea :rabiah :rath :ravnica :regatha :segovia :serra’s-realm :shadowmoor :shandalar :ulgrotha :valla :vryn :wildfire :xerex :zendikar})
 
 (s/def
   ^{:rule "205.4a"
-    :revision "2020.04.17"}
+    :version "2020.06.01"}
   ::supertype #{:basic :legendary :ongoing :snow :world})
 
 
