@@ -64,7 +64,7 @@ At this point, probably too many. To be discovered! :-)
 
   Luckily, [Clojure comes "with batteries ~included~ ready-to-plug-when-needed"](https://clojure.org/news/2012/02/17/clojure-governance), so it has these features already available, through [clojure.spec](https://clojure.org/about/spec) and [test.check](https://github.com/clojure/test.check) :-)
 
-- Base the aforementioned specifications on the most recent version of the Magic Comprehensive Rules, as published by the Magic copyright holders. As a reference, you will find a copy of the latest version used in [/resources/third-party](/resources/third-party).
+- Base the aforementioned specifications on the most recent version of the Magic Comprehensive Rules, as published by the Magic copyright holders. As a reference, you will find a copy of the latest version used in [/doc/third-party](/resources/third-party).
 
 - Stand on the shoulders of giants: use Systematic Program Design to strive for achieving a Clean Architecture.
 
