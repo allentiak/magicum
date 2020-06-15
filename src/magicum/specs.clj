@@ -82,6 +82,8 @@
     :version "2020.06.01"}
   ::untap-symbol #{:q})
 
+;; TODO: add level-symbol (107.8, 107.8a, 107.8b)
+
 (s/def
   ^{:rule "107.11"
     :version "2020.06.01"}
@@ -91,6 +93,25 @@
   ^{:rule "107.12"
     :version "2020.06.01"}
   ::chaos-symbol #{:chaos})
+
+(s/def
+  ^{:rule "107.13"
+    :version "2020.06.01"}
+  ::energy-symbol #{:e})
+
+;; TODO: add saga-symbol (107.15, 107.15a, 107.15b)
+
+(s/def
+  ^{:rule "109.1"
+    :version "2020.06.01"}
+  ::object #{:ability-on-the-stack :card :card-copy :token :spell :permanent :emblem})
+
+(s/def
+  ^{:rule "109.3"
+    :version "2020.06.01"}
+  ::object-characteristic #{:name :mana-cost :color :color-indicator :card-type :subtype :supertype :rules-text :abilities :power :toughness :loyalty :hand-modifier :life-modifier})
+
+;; TODO: add "109.4(a-e)"
 
 (s/def
   ^{:rule "205.2a"
