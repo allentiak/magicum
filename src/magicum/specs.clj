@@ -113,6 +113,21 @@
 
 ;; TODO: add "109.4(a-e)"
 
+;; TODO: add "110.1"
+
+(s/def
+  ^{:rule "110.4"
+    :version "2020.06.01"}
+  ::permanent-type #{:artifact :creature :enchantment :land :planeswalker})
+
+;; TODO: add permanent-card ("110.4a")
+
+;; FIXME: all this options are binary
+(s/def
+  ^{:rule "110.5"
+    :version "2020.06.01"}
+  ::permanent-status #{:tapped :flipped :face-up :phased-in})
+
 (s/def
   ^{:rule "205.2a"
     :version "2020.06.01"}
