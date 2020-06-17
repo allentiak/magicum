@@ -128,6 +128,53 @@
     :version "2020.06.01"}
   ::permanent-status #{:tapped :flipped :face-up :phased-in})
 
+;; TODO: review "111.10a-c" to see whether predefined tokens should be added here
+
+;; TODO: review "113.1-2" to see whether (and how) abilities should be added here
+
+;; FIXME: 113.4 mana abilities are also activated, triggered, or both
+(s/def
+  ^{:rule "113.3"
+    :version "2020.06.01"}
+  ::ability-type #{:spell :activated :triggered :static :mana})
+
+;; TODO: add "113.5" loyalty-ability
+
+;; TODO: check how "114" emblems (for commander) could be added here
+
+;; TODO: check whether "115" targets should be added here
+
+;; FIXME: verify special action types. they should be eight, but there are only six here
+(s/def
+  ^{:rule "116.2"
+    :version "2020.06.01"}
+  ::special-action-type #{:play-a-land :turn-a-face-down-creature-face-up :exile-card-with-suspend-in-hand :put-companion-in-hand :rolling-the-planar-die :turn-a-face-down-conspiracy-card-in-the-command-zone-face-up})
+
+;; TODO: 117: timing and priority: a player can be either :active or :inactive, :with-priority or :without-priority
+
+;; FIXME: 118.9: cost: take into account original and alternative costs
+(s/def
+  ^{:rule "118"
+    :version "2020.06.01"}
+  ::cost-type #{:mandatory :optional})
+
+;; TODO: 119: life: consider whether there actualyy is something there than can be specable (I think not)
+
+;; TODO: 120.4: damage: assignation steps are there
+
+;; TODO: 121: draw relates to dynamic model - not specable
+
+;; 122: counters
+(s/def
+  ^{:rule "122.1b"
+    :version "2020.06.01"}
+  ::keyword-counter #{:flying :first-strike :double-strike :deathtouch :haste :hexproof :indestructible :lifelink :menace :reach :trample :vigilance})
+
+(s/def
+  ^{:rule "122"
+    :version "2020.06.01"}
+  ::counter-type #{:plus-or-minus-counter :keyword-counter :loyalty-counter :poison-counter})
+
 (s/def
   ^{:rule "205.2a"
     :version "2020.06.01"}
