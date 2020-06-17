@@ -175,6 +175,22 @@
     :version "2020.06.01"}
   ::counter-type #{:plus-or-minus-counter :keyword-counter :loyalty-counter :poison-counter})
 
+(s/def
+  ^{:rule "200.1"
+    :version "2020.06.01"}
+  ::card (s/keys :opt-un [::name ::mana-cost ::illustration ::color-indicator ::type ::expansion-symbol ::text-box ::power-and-toughness ::loyalty ::hand-modifier ::life-modifier ::illustration-credit ::legal-text ::collector-number]))
+
+;; 201: name: not specable
+
+;; FIXME: see 202.3 on how to define this fn
+(s/defn
+  ^{:rule "202.3"
+    :version "2020.06.01"}
+  ::converted-mana-cost)
+
+;; 203: illustration: not specable
+
+;; 204: color-indicator: not specable
 
 
 (s/def ::artist (s/and string? seq))
@@ -286,3 +302,10 @@
   ^{:rule "205.4a"
     :version "2020.06.01"}
   ::supertype #{:basic :legendary :ongoing :snow :world})
+
+;; FIXME: 206.1: expansion-symbol: verify how to spec this
+
+(s/def
+  ^{:rule "206.2"
+    :version "2020.06.01"}
+  ::expansion-symbol-rarity #{:mythic-rare :rare :uncommon :common :timeshifted})
