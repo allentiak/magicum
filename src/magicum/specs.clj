@@ -309,3 +309,33 @@
   ^{:rule "206.2"
     :version "2020.06.01"}
   ::expansion-symbol-rarity #{:mythic-rare :rare :uncommon :common :timeshifted})
+
+(s/def
+  ^{:rule "207"
+    :version "2020.06.01"}
+  ::text-box-type #{:rules-text :reminder-text :flavor-text :ability-word})
+
+(s/def
+  ^{:rule "207.2c"
+    :version "2020.06.01"}
+  ::ability-word #{:adamant :addendum :battalion :bloodrush :channel :chroma :cohort :constellation :converge :council’s-dilemma :delirium :domain :eminence :enrage :fateful-hour :ferocious :formidable :grandeur :hellbent :heroic :imprint :inspired :join-forces :kinship: :landfall :lieutenant :metalcraft :morbid :parley :radiance :raid :rally :revolt :spell-mastery :strive :sweep :tempting-offer :threshold :undergrowth :will-of-the-council})
+
+;; 208: power and toughness
+
+;; 209: TODO: loyalty (planeswalkers)
+
+;; 210: TODO: hand modifier (vanguard)
+
+;; 211: TODO: life modifier (vanguard)
+
+;; FIXME: set-code (three chars)
+(s/def
+  ^{:rule "212.1d"
+    :version "2020.06.01"}
+  ::set-code)
+
+;; FIXME: language-code (two chars)
+(s/def
+  ^{:rule "212.1d"
+    :version "2020.06.01"}
+  ::language-code)
