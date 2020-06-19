@@ -251,10 +251,11 @@
 
 
 
+;; also rule 300.1
 (s/def
   ^{:rule "205.2a"
     :version "2020.06.01"}
-  ::type #{:artifact :conspiracy :creature :enchantment :instant :land :phenomenon :plane :planeswalker :scheme :sorcery :tribal :vanguard})
+  ::card-type #{:artifact :conspiracy :creature :enchantment :instant :land :phenomenon :plane :planeswalker :scheme :sorcery :tribal :vanguard})
 
 ;; (s/exercise ::type)
 
@@ -339,3 +340,65 @@
   ^{:rule "212.1d"
     :version "2020.06.01"}
   ::language-code)
+
+
+;; rule 301: artifacts
+
+;; FIXME: equipment artifacts can only be legally attached to ("equip") one creature
+(s/def
+  ^{:rule "301.5"
+    :version "2020.06.01"}
+  ::equipment)
+
+;; FIXME: fortification artifacts can only be legally attached to ("fortify") one land
+(s/def
+  ^{:rule "301.6"
+    :version "2020.06.01"}
+  ::fortification)
+
+;; FIXME: vehicle artifact can only be legally transformed to an artifact creature ("crewed") by creatures
+(s/def
+  ^{:rule "301.7"
+    :version "2020.06.01"}
+  ::equipment)
+
+
+;; rule 302: creatures
+
+;; FIXME: summoning sickness (no attack, no activated-abilities that include :t)
+(s/def
+  ^{:rule "302.7"
+    :version "2020.06.01"}
+  ::summoning-sickness)
+
+;; rule 303: enchantments
+
+;; FIXME: aura-enchantments need one target; can only enchant as long as is not a creature
+(s/def
+  ^{:rule "303.4"
+    :version "2020.06.01"}
+  ::aura-enchantment)
+
+;; TODO: rule 304: instants - nothing to spec here?
+
+;; FIXME: rule 305: lands: only one land can be played per turn; if a land is also something else, it has to be played as a land
+(s/def
+  ^{:rule "305"
+    :version "2020.06.01"}
+  ::player-can-play-a-land)
+
+;; TODO: rule 306: planeswalkers
+
+;; TODO: rule 307: sorceries
+
+;; TODO: rule 308: tribals
+
+;; TODO: rule 309: planes
+
+;; TODO: rule 310: phenomena
+
+;; TODO: rule 311: vanguards
+
+;; TODO: rule 312: schemes
+
+;; TODO: rule 313: conspiracies
