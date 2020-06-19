@@ -402,3 +402,29 @@
 ;; TODO: rule 312: schemes
 
 ;; TODO: rule 313: conspiracies
+
+;; FIXME: verify rules 40x to see whether something else can be speced
+(s/def
+  ^{:rule "400.1"
+    :version "2020.06.01"}
+  ::zone #{:library :hand :battlefield :graveyard :stack :exile :command :ante})
+
+(s/def
+  ^{:rule "400.1"
+    :version "2020.06.01"}
+  ::shared-zone #{:battlefield :stack :exile :command :ante})
+
+(s/def
+  ^{:rule "400.1"
+    :version "2020.06.01"}
+  ::non-shared-zone #{:library :hand :graveyard})
+
+(s/def
+  ^{:rule "400.2"
+    :version "2020.06.01"}
+  ::public-zone #{:graveyard :battlefield :stack :exile :ante :command})
+
+(s/def
+  ^{:rule "400.2"
+    :version "2020.06.01"}
+  ::hidden-zone #{:library :hand})
