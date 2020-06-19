@@ -428,3 +428,26 @@
   ^{:rule "400.2"
     :version "2020.06.01"}
   ::hidden-zone #{:library :hand})
+
+
+;; rules: 500: turn structure
+
+(s/def
+  ^{:rule "500.1"
+    :version "2020.06.01"}
+  ::phase (:beginning :precombat-main :combat :postcombat-main :ending))
+
+(s/def
+  ^{:rule "501.1"
+    :version "2020.06.01"}
+  ::beginning-phase-step (:untap :upkeep :draw))
+
+(s/def
+  ^{:rule "506.1"
+    :version "2020.06.01"}
+  ::combat-phase-step (:beginning-of-combat :declare-attackers :declare-blockers :combat-damage :end-of-combat))
+
+(s/def
+  ^{:rule "512.1"
+    :version "2020.06.01"}
+  ::ending-phase-step (:end :cleanup))
