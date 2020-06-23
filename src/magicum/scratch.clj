@@ -1,4 +1,4 @@
-(ns magicum.specs
+(ns magicum.scratch
   (:gen-class)
   (:require [clojure.spec.alpha :as s]))
 
