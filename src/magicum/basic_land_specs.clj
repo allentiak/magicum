@@ -25,22 +25,27 @@
 (defn unstrument []
   (st/unstrument fns-with-specs))
 
+#_(require
+   '[clojure.spec.alpha :as s]
+   '[clojure.spec.test.alpha :as st])
+
+
+(s/def
+  ::basic-land-name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
+
+(s/explain ::basic-land-name "Forest")
+(s/explain ::basic-land-name "Any string outside the list fails")
+
+(s/def ::legal-text string?)
+(s/explain ::legal-text "For now, any string will be a valid legal-text")
+
+(s/def
+  ::basic-land-type #{::forest ::island ::mountain ::plains ::swamp})
 
 (s/def
   ::basic-land-card (s/keys :req-un [::basic-land-name ::basic-land-type ::legal-text]))
 
-(s/def
-  ::legal-text string?)
+(def forest-card
+  {:basic-land-type ::forest, :basic-land-name "Forest", :legal-text "This legal text should be valid for now"})
 
-(s/def ::basic-land-name
- {::forest "Forest", ::island "Island", ::mountain "Mountain", ::plains "Plains", ::swamp "Swamp"})
-
-(s/fdef
-    basic-land-name
-  :args (s/cat ::basic-land-type)
-  :ret ::basic-land-name)
-
-(s/def
-  ^{:rule "205.3i"
-    :version "2020.06.01"}
-  ::basic-land-type #{::forest ::island ::mountain ::plains ::swamp})
+(s/explain ::basic-land-card forest-card)
