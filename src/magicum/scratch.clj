@@ -15,12 +15,12 @@
 (s/def
   ^{:rule "106.1a"
     :version "2020.06.01"}
-  ::mana-color #{:white :blue :black :red :green})
+  ::mana-color #{::white ::blue ::black ::red ::green})
 
 (s/def
   ^{:rule "106.1b"
     :version "2020.06.01"}
-  ::mana-type #{:white :blue :black :red :green :colorless})
+  ::mana-type #{::mana-color :colorless})
 
 
 ;; 107: numbers and symbols
@@ -28,12 +28,12 @@
 (s/def
   ^{:rule "107.4"
     :version "2020.06.01"}
-  ::primary-mana-symbol {:w :white, :u :blue, :b :black, :r :red, :g :green})
+  ::primary-mana-symbol {::w ::white, ::u ::blue, ::b ::black, ::r ::red, ::g ::green})
 
 (s/def
   ^{:rule "107.4"
     :version "2020.06.01"}
-  ::variable-mana-symbol #{:x})
+  ::variable-mana-symbol #{::x})
 
 (s/def
   ^{:rule "107.4"
@@ -43,27 +43,27 @@
 (s/def
   ^{:rule "107.4"
     :version "2020.06.01"}
-  ::colorless-mana-symbol {:c :colorless})
+  ::colorless-mana-symbol {::c ::colorless})
 
 (s/def
   ^{:rule "107.4"
     :version "2020.06.01"}
-  ::hybrid-mana-symbol #{:wu :wb :ub :ur :br :bg :rg :rw :gw :gu})
+  ::hybrid-mana-symbol #{::wu ::wb ::ub ::ur ::br ::bg ::rg ::rw ::gw ::gu})
 
 (s/def
   ^{:rule "107.4"
     :version "2020.06.01"}
-  ::monocolored-hybrid-mana-symbol #{:2w :2u :2b :2r :2g})
+  ::monocolored-hybrid-mana-symbol #{::2w ::2u ::2b ::2r ::2g})
 
 (s/def
   ^{:rule "107.4"
     :version "2020.06.01"}
-  ::colored-phyrexian-mana-symbol #{:wp :up :bp :rp :gp})
+  ::colored-phyrexian-mana-symbol #{::wp ::up ::bp ::rp ::gp})
 
 (s/def
   ^{:rule "107.4"
     :version "2020.06.01"}
-  ::generic-phyrexian-mana-symbol #{:p})
+  ::generic-phyrexian-mana-symbol #{::p})
 
 (s/def
   ^{:rule "107.4"
@@ -73,7 +73,7 @@
 (s/def
    ^{:rule "107.4"
      :version "2020.06.01"}
-   ::snow-mana-symbol #{:s})
+   ::snow-mana-symbol #{::s})
 
 (s/def
   ^{:rule "107.4"
@@ -83,29 +83,29 @@
 (s/def
   ^{:rule "107.5"
     :version "2020.06.01"}
-  ::tap-symbol #{:t})
+  ::tap-symbol #{::t})
 
 (s/def
   ^{:rule "107.6"
     :version "2020.06.01"}
-  ::untap-symbol #{:q})
+  ::untap-symbol #{::q})
 
 ;; TODO: add level-symbol (107.8, 107.8a, 107.8b)
 
 (s/def
   ^{:rule "107.11"
     :version "2020.06.01"}
-  ::planeswalker-symbol #{:pw})
+  ::planeswalker-symbol #{::pw})
 
 (s/def
   ^{:rule "107.12"
     :version "2020.06.01"}
-  ::chaos-symbol #{:chaos})
+  ::chaos-symbol #{::chaos})
 
 (s/def
   ^{:rule "107.13"
     :version "2020.06.01"}
-  ::energy-symbol #{:e})
+  ::energy-symbol #{::e})
 
 ;; TODO: add saga-symbol (107.15, 107.15a, 107.15b)
 
@@ -118,12 +118,12 @@
 (s/def
   ^{:rule "109.1"
     :version "2020.06.01"}
-  ::object #{:ability-on-the-stack :card :card-copy :token :spell :permanent :emblem})
+  ::object #{::ability-on-the-stack ::card ::card-copy ::token ::spell ::permanent ::emblem})
 
 (s/def
   ^{:rule "109.3"
     :version "2020.06.01"}
-  ::object-characteristic #{:name :mana-cost :color :color-indicator :card-type :subtype :supertype :rules-text :abilities :power :toughness :loyalty :hand-modifier :life-modifier})
+  ::object-characteristic #{::name ::mana-cost ::color ::color-indicator ::card-type ::subtype ::supertype ::rules-text ::abilities ::power ::toughness ::loyalty ::hand-modifier ::life-modifier})
 
 ;; TODO: add "109.4(a-e)"
 
@@ -135,7 +135,7 @@
 (s/def
   ^{:rule "110.4"
     :version "2020.06.01"}
-  ::permanent-type #{:artifact :creature :enchantment :land :planeswalker})
+  ::permanent-type #{::artifact ::creature ::enchantment ::land ::planeswalker})
 
 ;; TODO: add permanent-card ("110.4a")
 
@@ -143,7 +143,7 @@
 (s/def
   ^{:rule "110.5"
     :version "2020.06.01"}
-  ::permanent-status #{:tapped :flipped :face-up :phased-in})
+  ::permanent-status #{::tapped ::flipped ::face-up ::phased-in})
 
 ;; 111: tokens
 
@@ -161,7 +161,7 @@
 (s/def
   ^{:rule "113.3"
     :version "2020.06.01"}
-  ::ability-type #{:spell :activated :triggered :static :mana})
+  ::ability-type #{::spell ::activated ::triggered ::static ::mana})
 
 ;; TODO: add "113.5" loyalty-ability
 
@@ -176,7 +176,7 @@
 (s/def
   ^{:rule "116.2"
     :version "2020.06.01"}
-  ::special-action-type #{:play-a-land :turn-a-face-down-creature-face-up :exile-card-with-suspend-in-hand :put-companion-in-hand :rolling-the-planar-die :turn-a-face-down-conspiracy-card-in-the-command-zone-face-up})
+  ::special-action-type #{::play-a-land ::turn-a-face-down-creature-face-up ::exile-card-with-suspend-in-hand ::put-companion-in-hand ::rolling-the-planar-die ::turn-a-face-down-conspiracy-card-in-the-command-zone-face-up})
 
 ;; TODO: 117: timing and priority: a player can be either :active or :inactive, :with-priority or :without-priority
 
@@ -184,7 +184,7 @@
 (s/def
   ^{:rule "118"
     :version "2020.06.01"}
-  ::cost-type #{:mandatory :optional})
+  ::cost-type #{::mandatory ::optional})
 
 ;; TODO: 119: life: consider whether there actualyy is something there than can be specable (I think not)
 
@@ -196,12 +196,12 @@
 (s/def
   ^{:rule "122.1b"
     :version "2020.06.01"}
-  ::keyword-counter #{:flying :first-strike :double-strike :deathtouch :haste :hexproof :indestructible :lifelink :menace :reach :trample :vigilance})
+  ::keyword-counter #{::flying ::first-strike ::double-strike ::deathtouch ::haste ::hexproof ::indestructible ::lifelink ::menace ::reach ::trample ::vigilance})
 
 (s/def
   ^{:rule "122"
     :version "2020.06.01"}
-  ::counter-type #{:plus-or-minus-counter :keyword-counter :loyalty-counter :poison-counter})
+  ::counter-type #{::plus-or-minus-counter ::keyword-counter ::loyalty-counter ::poison-counter})
 
 ;; 2xx: parts of a card
 
