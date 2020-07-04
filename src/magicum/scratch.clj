@@ -6,6 +6,12 @@
 ;; :rule nnn.nb - Comprehensive Rule on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
 ;; :version yyyy.mm.dd - date of the Comprehensive Rules document used to create this element.
 
+
+;; 1xx: game concepts
+
+
+;; 106: mana
+
 (s/def
   ^{:rule "106.1a"
     :version "2020.06.01"}
@@ -16,6 +22,8 @@
     :version "2020.06.01"}
   ::mana-type #{:white :blue :black :red :green :colorless})
 
+
+;; 107: numbers and symbols
 
 (s/def
   ^{:rule "107.4"
@@ -101,6 +109,12 @@
 
 ;; TODO: add saga-symbol (107.15, 107.15a, 107.15b)
 
+
+;; 108: cards (see section 2xx)
+
+
+;; 109: objects
+
 (s/def
   ^{:rule "109.1"
     :version "2020.06.01"}
@@ -112,6 +126,9 @@
   ::object-characteristic #{:name :mana-cost :color :color-indicator :card-type :subtype :supertype :rules-text :abilities :power :toughness :loyalty :hand-modifier :life-modifier})
 
 ;; TODO: add "109.4(a-e)"
+
+
+;; 110: permanents
 
 ;; TODO: add "110.1"
 
@@ -128,7 +145,15 @@
     :version "2020.06.01"}
   ::permanent-status #{:tapped :flipped :face-up :phased-in})
 
+;; 111: tokens
+
 ;; TODO: review "111.10a-c" to see whether predefined tokens should be added here
+
+
+;; 112: spells
+
+
+;; 113: abilities
 
 ;; TODO: review "113.1-2" to see whether (and how) abilities should be added here
 
@@ -143,6 +168,9 @@
 ;; TODO: check how "114" emblems (for commander) could be added here
 
 ;; TODO: check whether "115" targets should be added here
+
+
+;; 116: special actions
 
 ;; FIXME: verify special action types. they should be eight, but there are only six here
 (s/def
@@ -175,12 +203,16 @@
     :version "2020.06.01"}
   ::counter-type #{:plus-or-minus-counter :keyword-counter :loyalty-counter :poison-counter})
 
+;; 2xx: parts of a card
+
 (s/def
   ^{:rule "200.1"
     :version "2020.06.01"}
   ::card (s/keys :opt-un [::name ::mana-cost ::illustration ::color-indicator ::type ::expansion-symbol ::text-box ::power-and-toughness ::loyalty ::hand-modifier ::life-modifier ::illustration-credit ::legal-text ::collector-number]))
 
 ;; 201: name: not specable
+
+;; 202: mana, cost, and color
 
 ;; FIXME: see 202.3 on how to define this fn
 (s/defn
@@ -249,7 +281,7 @@
 (s/def ::card (s/multi-spec card-spec :types))
 
 
-
+;; 205: type line
 
 ;; also rule 300.1
 (s/def
@@ -304,12 +336,16 @@
     :version "2020.06.01"}
   ::supertype #{:basic :legendary :ongoing :snow :world})
 
+;; 206: expansion symbol
+
 ;; FIXME: 206.1: expansion-symbol: verify how to spec this
 
 (s/def
   ^{:rule "206.2"
     :version "2020.06.01"}
   ::expansion-symbol-rarity #{:mythic-rare :rare :uncommon :common :timeshifted})
+
+;; 207: text box
 
 (s/def
   ^{:rule "207"
@@ -341,8 +377,9 @@
     :version "2020.06.01"}
   ::language-code)
 
+;; 3xx: card types
 
-;; rule 301: artifacts
+;; 301: artifacts
 
 ;; FIXME: equipment artifacts can only be legally attached to ("equip") one creature
 (s/def
@@ -363,7 +400,7 @@
   ::equipment)
 
 
-;; rule 302: creatures
+;; 302: creatures
 
 ;; FIXME: summoning sickness (no attack, no activated-abilities that include :t)
 (s/def
@@ -403,6 +440,9 @@
 
 ;; TODO: rule 313: conspiracies
 
+
+;; 4xx: zones
+
 ;; FIXME: verify rules 40x to see whether something else can be speced
 (s/def
   ^{:rule "400.1"
@@ -430,7 +470,7 @@
   ::hidden-zone #{:library :hand})
 
 
-;; rules: 500: turn structure
+;; 5xx: turn structure
 
 (s/def
   ^{:rule "500.1"
