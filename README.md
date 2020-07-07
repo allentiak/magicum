@@ -68,7 +68,7 @@ At this point, probably too many. To be discovered! :-)
 
 - Stand on the shoulders of giants: use Systematic Program Design to strive for achieving a Clean Architecture.
 
-  Systematic Program Design is explained in depth in ["How to Design Programs, Second Edition"](https://htpd.org), by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, and Shriram Krishnamurthi.
+  Systematic Program Design is explained in depth in ["How to Design Programs, Second Edition"](https://htdp.org), by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, and Shriram Krishnamurthi.
 
   The Clean Architecture is described in ["The Clean Architecture"](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), by Robert C. Martin (a.k.a. "Uncle Bob").
 
