@@ -128,6 +128,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-All trademarks and/or registered trademarks mentioned in this program and/or its documentation
-are the property of their own owners. We are not affiliated in any way with the copyright owners of
-Magic: The Gathering, nor we claim any copyright over their game, their implementations, their art assets or any other kind of intellectual wealth.
+All third-party trademarks and/or registered trademarks mentioned in this program and/or its documentation
+are the property of their own owners.
+We are not affiliated in any way with the copyright owners of
+the official Magic: The Gathering game implementations (neither digital or analog), nor we claim any copyright over their products, their art assets or any other kind of intellectual wealth of theirs. What's theirs, is theirs. What's ours, is ours.
+In case of doubt, please do contact us, or open a ticket.
