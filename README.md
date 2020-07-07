@@ -79,15 +79,26 @@ FIXME: add CI/CD setup data.
 
 ## Acknowledgements
 
-This program is inspired by other Magic: The Gathering _libre_ implementations for the JVM platform. More specifically, by (in discovery order) [Magarena](https://github.com/magarena/magarena/), [XMage](https://github.com/magefree/mage), [Matag](https://github.com/antonioalonzi/matag), and [Forge](https://git.cardforge.org/core-developers/forge).
+This program is inspired by other  Magic: The Gathering _libre_ implementations. It's great being able to get inspiration from these great, already-working projects!
 
-The domain specs are based on Robert Stuttaford's and Adam Frey's work, with their express permission to use their code as I see fit. For more details, see [doc/ABOUT_THE_SPECS.md](doc/ABOUT_THE_SPECS.md)
+Luckily, we have tried them all, read their code, and even made (minor) contributions to some of them.
 
-As a reference, you will find a copy of the latest Magic Comprehensive Rules document on which the specs are based in the folder [/resources/third-party](/resources/third-party).
+And we continue to use a couple of them regularly, as each one of them has one thing we appreciate.
 
-All trademarks and/or registered trademarks mentioned in this program and/or its documentation
-are the property of their own owners. We are not affiliated in any way with the copyright owners of
-Magic: The Gathering, nor we claim any copyright over their game, their implementations, their art assets or any other kind of intellectual wealth.
+More specifically, we are referring to (in discovery order):
+
+Implementation (Backend + Frontend) | Strongest point
+--------- | ----------
+[Magarena (Java + Swing)](https://github.com/magarena/magarena/) | The only that fully implements an state-of-the-art MCTS AI.
+[XMage (Java + Swing)](https://github.com/magefree/mage) | The best (OO) architectured.
+[Matag (Java + JavaScript)](https://github.com/antonioalonzi/matag) | The best in-game UI, by far.
+[MvS' Magic (Haskell)](https://github.com/MedeaMelana/Magic) | Written in a fully-functional language, with a Client/Server architecture.
+[Forge (Java + Swing)](https://git.cardforge.org/core-developers/forge) | Best overall out-game UI design, and gameplay features.
+
+
+The domain specs are based on Robert Stuttaford's and Adam Frey's work, with their express permission to use their code as I see fit. For more details, see [doc/ABOUT_THE_SPECS.md](doc/ABOUT_THE_SPECS.md). You will find a copy of the latest Magic Comprehensive Rules document on which the specs are based in the folder [/resources/third-party](/resources/third-party).
+
+
 
 
 ## License
@@ -116,3 +127,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+All trademarks and/or registered trademarks mentioned in this program and/or its documentation
+are the property of their own owners. We are not affiliated in any way with the copyright owners of
+Magic: The Gathering, nor we claim any copyright over their game, their implementations, their art assets or any other kind of intellectual wealth.
