@@ -33,11 +33,15 @@
 (s/def
   ::basic-land-name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
 
-(s/explain ::basic-land-name "Forest")
-(s/explain ::basic-land-name "Any string outside the list fails")
+;; works as expected
+#_(s/explain ::basic-land-name "Forest")
+
+;; fails as expected
+#_(s/explain ::basic-land-name "Any string outside the list fails")
 
 (s/def ::legal-text string?)
-(s/explain ::legal-text "For now, any string will be a valid legal-text")
+;; works as expected
+#_(s/explain ::legal-text "For now, any string will be a valid legal-text")
 
 (s/def
   ::basic-land-type #{::forest ::island ::mountain ::plains ::swamp})
@@ -48,4 +52,5 @@
 (def forest-card
   {:basic-land-type ::forest, :basic-land-name "Forest", :legal-text "This legal text should be valid for now"})
 
-(s/explain ::basic-land-card forest-card)
+;; works as expected
+#_(s/explain ::basic-land-card forest-card)
