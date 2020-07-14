@@ -1,4 +1,4 @@
-(ns magicum.basic-land-specs-test
+(ns magicum.specs-test
   (:require
    [clojure.test :refer [deftest is testing]]
    [magicum.specs :as specs]))

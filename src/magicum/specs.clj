@@ -1,4 +1,4 @@
-(ns magicum.basic-land-specs
+(ns magicum.specs
   (:gen-class)
   (:require
    [clojure.spec.alpha :as s]
@@ -11,7 +11,7 @@
 
 ;; a basic land card (see spec for 200.1)
 
-;; irrelevant to game playing: ::illustration, ::illustration-credit, ::expansion-symbol
+;; irrelevant to gameplay: ::illustration, ::illustration-credit, ::expansion-symbol
 ;; irrelevant to basic land cards: ::c  olor-indicator
 ;; always constant for basic land cards: ::color-indicator (always nil), ::mana-cost (always 0), ::type (always )
 
