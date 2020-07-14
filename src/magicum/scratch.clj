@@ -20,7 +20,7 @@
 (s/def
   ^{:rule "106.1b"
     :version "2020.06.01"}
-  ::mana-type #{::mana-color :colorless})
+  ::mana-type #{::mana-color ::colorless})
 
 
 ;; 107: numbers and symbols
