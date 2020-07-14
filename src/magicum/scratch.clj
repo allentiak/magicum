@@ -208,7 +208,7 @@
 (s/def
   ^{:rule "200.1"
     :version "2020.07.03"}
-  ::card (s/keys :opt-un [::name ::mana-cost ::illustration ::color-indicator ::type ::expansion-symbol ::text-box ::power-and-toughness ::loyalty ::hand-modifier ::life-modifier ::illustration-credit ::legal-text ::collector-number]))
+  ::card (s/keys :opt [::name ::mana-cost ::illustration ::color-indicator ::type ::expansion-symbol ::text-box ::power-and-toughness ::loyalty ::hand-modifier ::life-modifier ::illustration-credit ::legal-text ::collector-number]))
 
 ;; 201: name: not specable
 
@@ -228,7 +228,7 @@
 (s/def ::artist (s/and string? seq))
 (s/def ::set (s/and string? seq))
 (s/def ::set-number pos-int?)
-(s/def ::metadata (s/keys :req-un [::set ::set-number ::artist]))
+(s/def ::metadata (s/keys :req [::set ::set-number ::artist]))
 ;; (s/exercise ::metadata)
 (s/def ::name (s/and string? seq))
 (s/def ::types (s/and set? (s/+ ::type)))
@@ -240,8 +240,8 @@
 (s/def ::legendary? boolean?)
 (s/def ::world? boolean?)
 
-(s/def ::base-card (s/keys :req-un [::name ::types ::metadata ::rules]
-                           :opt-un [::sub-type ::legendary? ::world?]))
+(s/def ::base-card (s/keys :req [::name ::types ::metadata ::rules]
+                           :opt [::sub-type ::legendary? ::world?]))
 
 (->> (s/exercise ::base-card) (take 5))
 
@@ -249,21 +249,21 @@
 (s/def ::color #{:white :blue :black :red :green})
 (s/def ::colors (s/+ ::color))
 
-(s/def ::mana (s/keys :req-un [::amount]
-                      :opt-un [::colors]))
+(s/def ::mana (s/keys :req [::amount]
+                      :opt [::colors]))
 (s/def ::manas (s/+ ::mana))
 (s/def ::cost (s/* ::manas))
 
-(s/def ::spell (s/and ::base-card (s/keys :req-un [::cost])))
+(s/def ::spell (s/and ::base-card (s/keys :req [::cost])))
 
 (s/def ::power int?)
 (s/def ::toughness int?)
 
-(s/def ::creature (s/and ::spell (s/keys :req-un [::power ::toughness])))
+(s/def ::creature (s/and ::spell (s/keys :req [::power ::toughness])))
 
 (s/def ::loyalty int?)
 
-(s/def ::planeswalker (s/and ::spell (s/keys :req-un [::loyalty])))
+(s/def ::planeswalker (s/and ::spell (s/keys :req [::loyalty])))
 
 (defmulti card-spec :types)
 

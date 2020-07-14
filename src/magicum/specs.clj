@@ -47,7 +47,7 @@
   ::basic-land-type #{::forest ::island ::mountain ::plains ::swamp})
 
 (s/def
-  ::basic-land-card (s/keys :req-un [::basic-land-name ::basic-land-type ::legal-text]))
+  ::basic-land-card (s/keys :req [::basic-land-name ::basic-land-type ::basic-land-legal-text]))
 
 (def forest-card
   {:basic-land-type ::forest, :basic-land-name "Forest", :legal-text "This legal text should be valid for now"})
