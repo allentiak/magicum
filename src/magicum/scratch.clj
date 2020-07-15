@@ -6,6 +6,7 @@
 ;; :rule nnn.nb - Comprehensive Rule on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
 ;; :version yyyy.mm.dd - date of the Comprehensive Rules document used to create this element.
 
+;; Currently, clojure.spec 1.x does not support metadata, so this file cannot be compiled. clojure.spec 2 may support metadata. In the meantime, this file is a formal specification of the rules document, uses as a reference for the implementation.
 
 ;; 1xx: game concepts
 
