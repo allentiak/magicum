@@ -582,8 +582,41 @@
 
 ;; 8xx: multiplayer rules
 
-;; TODO: add subrules
+;; 800: general
+
+;; 801: option: limited range of influence
+
+;; 802: option: attack multiple players
+
+;; 803: option: attack left, attack right
+
+;; 804: option: deploy creatures
+
+;; 805: option: shared team
+
+;; 806: variant: free-for-ally
+
+;; 807: variant: grand melee
+
+;; 808: variant: team vs. team
+
+;; 809: variant: emperor
+
+;; 810: variant: two-headed giant
+
+;; 811: variant: alternating teams
+
 
 ;; 9xx: casual variants
 
-;; TODO: add subrules
+;; 900: general
+
+;; 901: variant: planechase
+
+;; 902: variant: vanguard
+
+;; 903: variant: commander
+
+;; 904: variant: archenemy
+
+;; 905: variant: conspiracy draft
