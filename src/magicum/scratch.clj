@@ -511,7 +511,7 @@
 (s/def
   ^{:rule "602-7"
     :version: "2020.07.03"}
-  ::ability #{::activated-ability ::triggered-ability ::static-ability})
+  ::ability-type #{::activated-ability-type ::triggered-ability-type ::static-ability-type})
 
 
 ;; 602: activated abilities
@@ -519,7 +519,7 @@
 (s/def
   ^{:rule "602,605,606"
     :version "2020.07.03"}
-  ::activated-ability #{::mana-ability ::loyalty-ability ::other-activated-ability})
+  ::activated-ability-type #{::mana-ability ::loyalty-ability ::other-activated-ability})
 
 (s/def
   ^{:rule "602.2x"
@@ -544,6 +544,17 @@
 ;; 606: loyalty abilities
 
 ;; 607: linked abilities
+
+(s/def
+  ^{:rule: "607"
+    :version "2020.07.03"}
+  ::ability (s/* ::linked-to-ability))
+
+(s/def
+  ^{:rule "607"
+    :version "2020.07.03"}
+  ::linked-to-ability ::ability)
+
 
 ;; 608: resolving spells and abilities
 
