@@ -492,3 +492,98 @@
   ^{:rule "512.1"
     :version "2020.07.03"}
   ::ending-phase-step (::end ::cleanup))
+
+
+;; 6xx: spells, abilities, and effects
+
+;; 601: spells
+
+;; 602: activated abilities
+
+;; 603: triggered abilities
+
+;; 604: static abilities
+
+;; 605: mana abilities
+
+;; 606: loyalty abilities
+
+;; 607: linked abilities
+
+;; 608: resolving spells and abilities
+
+;; 609: effects
+
+;; 610: one-shot effects
+
+;; 611: continuous effects
+
+;; 612: text-changing effects
+
+;; 613: interaction of continuous effects
+
+;; 614: replacement effects
+
+;; 615: prevention effects
+
+;; 616: interaction of replacement/prevention effects
+
+
+;; 7xx: additional rules
+
+;; 700: general
+
+;; 701: keyword actions
+
+;; 702: keyword abilities
+
+;; 703: stated-based actions
+
+;; 704: turn-based actions
+
+;; 705: flipping a coin
+
+;; 706: copying objects
+
+;; 707: face-down spells and permanents
+
+;; 708: split cards
+
+;; 709: flip cards
+
+;; 710: leveler cards
+
+;; 711: double-faced cards
+
+;; 712: meld cards
+
+;; 713: checklist cards
+
+;; 714: saga cards
+
+;; 715: adventurer cards
+
+;; 716: controlling another player
+
+;; 717: ending turns and phases
+
+;; 718: the monarch
+
+;; 719: restarting the game
+
+;; 720: subgames
+
+;; 721: merging with permanents
+
+;; 722: taking shortcuts
+
+;; 723: handling illegal actions
+
+
+;; 8xx: multiplayer rules
+
+;; TODO: add subrules
+
+;; 9xx: casual variants
+
+;; TODO: add subrules
