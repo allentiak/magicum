@@ -498,13 +498,48 @@
 
 ;; 601: spells
 
+(s/def
+  ^{:rule "601.1"
+    :version "2020.07.03"}
+  ::playing-a-card #{::playing-a-land ::casting-a-card-as-a-spell})
+
+(s/def
+  ^{:rule "601"
+    :version "2020.07.03"}
+  ::spell-casting-steps (::being-allowed-to-cast ::propose-spell-to-cast ::determinate-legal-casting-cost ::pay-legal-casting-cost ::determinate-legal-target(s) ::choose-legal-target(s) ::move-card-to-stack))
+
+(s/def
+  ^{:rule "602-7"
+    :version: "2020.07.03"}
+  ::ability #{::activated-ability ::triggered-ability ::static-ability})
+
+
 ;; 602: activated abilities
+
+(s/def
+  ^{:rule "602,605,606"
+    :version "2020.07.03"}
+  ::activated-ability #{::mana-ability ::loyalty-ability ::other-activated-ability})
+
+(s/def
+  ^{:rule "602.2x"
+    :version "2020.07.03"}
+  ::ability-activation-steps (::being-allowed-to-activate ::propose-ability-to-activate ::determinate-legal-activation-cost ::pay-legal-activation-cost ::determinate-legal-target(s) ::choose-legal-target(s) ::reveal-card-with-ability ::move-ability-to-stack))
 
 ;; 603: triggered abilities
 
-;; 604: static abilities
+(s/def
+  ^{:rule "603"
+    :version "2020.07.03"}
+  ::every-time-an-event-occurs: (::determine-appliable-triggered-abilities ::activate-appliable-triggered-abilities))
+
+;; TODO: 603.10: triggered abilities that look back in time
+
+;; 604: static abilities (see 702: keyword abilities)
 
 ;; 605: mana abilities
+
+;; mana abilities can either be activated or triggered
 
 ;; 606: loyalty abilities
 
