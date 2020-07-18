@@ -6,7 +6,7 @@
   (require '[clojure.string :as str]))
 
 (defn subtypes->keywords
-       [s]
+  [s]
   "converts a seq of subtypes `Abcd, Bedcu, ..., Serra's Realm, ..., and Zordu` into a seq of keywords"
   (map (comp
          keyword
