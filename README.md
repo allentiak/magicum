@@ -72,6 +72,7 @@ At this point, probably too many. To be discovered! :-)
 
   The Clean Architecture is described in ["The Clean Architecture"](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), by Robert C. Martin (a.k.a. "Uncle Bob").
 
+
 ### CI/CD
 
 FIXME: add CI/CD setup data.
@@ -97,8 +98,6 @@ Implementation (Backend + Frontend) | Strongest point
 
 
 The domain specs are based on Robert Stuttaford's and Adam Frey's work, with their express permission to use their code as I see fit. For more details, see [doc/ABOUT_THE_SPECS.md](doc/ABOUT_THE_SPECS.md). You will find a copy of the latest Magic Comprehensive Rules document on which the specs are based in the folder [/resources/third-party](/resources/third-party).
-
-
 
 
 ## License
