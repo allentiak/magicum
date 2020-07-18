@@ -560,6 +560,16 @@
 
 ;; 609: effects
 
+(s/def
+  ^{:rule "609"
+    :version: "2020.07.03"}
+  ::effect-duration #{::one-shot ::continuous})
+
+(s/def
+  ^{:rule "609"
+    :version "2020.07.03"}
+  ::effect-type #{::text-changing ::replacement ::prevention})
+
 ;; 610: one-shot effects
 
 ;; 611: continuous effects
@@ -580,12 +590,24 @@
 ;; 700: general
 
 ;; 701: keyword actions
+(s/def
+  ^{:rule "702"
+    :version "2020.07.03"}
+  ::keyword-action #{::activate ::attach ::cast ::counter ::create ::destroy ::discard ::double ::exchange ::exile ::fight ::mill ::play ::regenerate ::reveal ::sacrifice ::scry ::search ::shuffle ::tap ::untap ::fateseal ::clash ::planeswalk ::set-in-motion ::abandon ::proliferate ::transform ::detain ::populate ::monstrosity ::vote ::bolster ::manifest ::support ::investigate ::meld ::goad ::exert ::explore ::assemble ::surveil ::adapt ::amass})
 
 ;; 702: keyword abilities
+(s/def
+  ^{:rule "702"
+    :version "2020.07.03"}
+  ::keyword-ability #{::deathtouch ::defender ::double-strike ::enchant ::equip ::first-strike ::flash ::flying ::haste ::hexproof ::indestructible::intimidate ::landwalk ::lifelink ::protection ::reach ::shroud ::trample ::vigilance ::banding ::rampage ::cumulative-upkeep ::flanking ::flashback ::phasing ::buyback ::shadow ::cycling ::echo ::horsemanship ::fading ::kicker ::flashback ::madness ::fear ::morph ::amplify ::provoke ::storm ::affinity ::entwine ::modular ::sunburst ::bushido ::soulshift :: splice ::offering ::ninjutsu ::epic ::convoke ::dredge ::transmute ::bloodthirst ::haunt ::replicate ::forecast ::graft ::recover ::ripple ::split-second ::suspend ::vanishing ::absorb ::aura-swap ::delve ::fortify ::frenzy ::gravestorm ::poisonous ::transfigure ::champion ::changeling ::evoke ::hideaway ::prowl ::reinforce ::conspire ::persist ::wither ::retrace ::devour ::exalted ::unearth ::cascade ::annihilator ::level-up ::rebound ::totem-armor ::infect ::battle-cry ::living-weapon ::undying ::miracle ::soulbound ::overload ::scavenge ::unleash ::cipher ::evolve ::extort ::fuse ::bestow ::tribute ::dethrone ::hidden-agenda ::outlast ::prowess ::dash ::exploit ::menace ::renown ::awaken ::devoid ::ingest ::myriad ::surge ::skulk ::emerge ::escalate ::melee ::crew ::fabricate ::partner ::undaunted ::improvise ::aftermath ::embalm ::eternalize ::afflict ::assist ::jump-start ::mentor ::afterlife ::riot ::spectacle ::escape ::companion ::mutate})
 
 ;; 703: stated-based actions
-
 ;; 704: turn-based actions
+
+(s/def
+  ^{:rule "703,704"
+    ::version "2020.07.03"}
+  ::action-type #{::state-based ::turn-based})
 
 ;; 705: flipping a coin
 
@@ -594,20 +616,17 @@
 ;; 707: face-down spells and permanents
 
 ;; 708: split cards
-
 ;; 709: flip cards
-
 ;; 710: leveler cards
-
 ;; 711: double-faced cards
-
 ;; 712: meld cards
-
 ;; 713: checklist cards
-
 ;; 714: saga cards
-
 ;; 715: adventurer cards
+(s/def
+  ^{:rule "708-715"
+    :version "2020.07.03"}
+  ::card-type #{::split ::flip ::leveler ::double-faced ::meld ::checklist ::saga ::adventurer})
 
 ;; 716: controlling another player
 
