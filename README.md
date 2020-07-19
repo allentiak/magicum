@@ -96,8 +96,9 @@ Implementation (Backend + Frontend) | Strongest point
 [MvS' Magic (Haskell)](https://github.com/MedeaMelana/Magic) | Written in a fully-functional language, with a Client/Server architecture.
 [Forge (Java + Swing)](https://git.cardforge.org/core-developers/forge) | Best overall out-game UI design, and gameplay features.
 
+As I couldn't find any FP Magic implementation written in Clojure, and given that I want to give [clojure.spec](https://clojure.org/about/spec) a try, I set up to write my own.
 
-The domain specs are based on Robert Stuttaford's and Adam Frey's work, with their express permission to use their code as I see fit. For more details, see [doc/ABOUT_THE_SPECS.md](doc/ABOUT_THE_SPECS.md). You will find a copy of the latest Magic Comprehensive Rules document on which the specs are based in the folder [/resources/third-party](/resources/third-party).
+Of course, I was not the first one to come up with the idea of using [clojure.spec](https://clojure.org/about/spec) for this. The domain specs are based on Robert Stuttaford's and Adam Frey's work, with their express permission to use their code as I see fit. For more details, see [doc/ABOUT_THE_SPECS.md](doc/ABOUT_THE_SPECS.md). You will find a copy of the latest Magic Comprehensive Rules document on which the specs are based in the folder [/resources/third-party](/resources/third-party).
 
 
 ## License
