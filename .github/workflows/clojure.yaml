@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: (Smoke) Build with Clojure CLI
-        run: echo "Hi!"
+        runs: echo "Hi!"
             using: 'docker'
             image: 'Dockerfile'
             run: echo "Hi!"
