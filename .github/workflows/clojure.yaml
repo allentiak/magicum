@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: (Smoke) Build with Clojure CLI
         uses: docker://clojure:tools-deps
-        run: clojure -Sdescribe
+        #run: clojure -Sdescribe
           # using: 'docker'
           # image: 'docker://clojure:tools-deps'
           # run: echo "Hi!"
