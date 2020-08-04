@@ -6,8 +6,6 @@ jobs:
     name: Build project
     runs-on: ubuntu-latest
     steps:
-      # - name: Docker container
-      #   uses: docker://clojure:tools-deps
       - name: Checkout
         uses: actions/checkout@v2
       - name: (Smoke) Build with Clojure CLI
