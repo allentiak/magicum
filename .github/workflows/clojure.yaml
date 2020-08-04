@@ -8,11 +8,11 @@ jobs:
     steps:
       # - name: Docker container
       #   uses: docker://clojure:tools-deps
-      # - name: Checkout
-      #   uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: (Smoke) Build with Clojure CLI
-        runs:
-          using: 'docker'
-          image: 'docker://clojure:tools-deps'
-          run: echo "Hi!"
+        run: clojure -Sdescribe
+          # using: 'docker'
+          # image: 'docker://clojure:tools-deps'
+          # run: echo "Hi!"
         #run: clojure -Sdescribe
