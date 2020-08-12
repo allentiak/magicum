@@ -5,10 +5,9 @@ jobs:
   build:
     name: Build project
     runs-on: ubuntu-latest
+    container: clojure:tools-deps
     steps:
-      - name: Use official Clojure.tools.deps Docker image
-        uses: docker://clojure:tools-deps
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Run 'clojure -Sdescribe'
+      - name: Smoke test (Run 'clojure -Sdescribe')
         run: clojure -Sdescribe
