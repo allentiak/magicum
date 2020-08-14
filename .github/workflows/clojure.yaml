@@ -4,10 +4,10 @@ on: push
 jobs:
   build:
     name: Build project
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container: clojure:tools-deps
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Smoke test (Run 'clojure -Sdescribe')
-        run: clojure -Sdescribe
+      - name: Run tests
+        run: clojure -A:test:runner
