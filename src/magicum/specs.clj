@@ -17,7 +17,7 @@
 
 
 (def ^:private fns-with-specs
-  [`basic-land-name])
+  [`lay-down])
 
 (defn instrument []
   (st/instrument fns-with-specs))
@@ -81,3 +81,18 @@
 
 (s/def
   ::world (s/keys :req [::hand ::battlefield]))
+
+(defn lay-down
+  [{:keys [world card from to]}]
+  "Given a world, return a new one in which a card from one of its zones is moved to the other zone."
+  (dissoc (:from :world) :card)
+  (assoc (:to :world) :card))
+
+(s/fdef lay-down
+  :args (s/cat :world ::world
+               :card ::card
+               :from ::zone
+               :to ::zone)
+  :ret ::world
+  :fn #(and (= (dissoc (:to (:ret %)) :card) (:to %))
+            (= (assoc (:from (:ret %)) :card (:from %)))))
