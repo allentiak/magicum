@@ -135,7 +135,7 @@
 
 (s/def
   ^{:rule "110.4"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::permanent-type #{::artifact ::creature ::enchantment ::land ::planeswalker})
 
 ;; TODO: add permanent-card ("110.4a")
@@ -143,7 +143,7 @@
 ;; FIXME: all this options are binary
 (s/def
   ^{:rule "110.5"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::permanent-status #{::tapped ::flipped ::face-up ::phased-in})
 
 ;; 111: tokens
@@ -161,7 +161,7 @@
 ;; FIXME: 113.4 mana abilities are also activated, triggered, or both
 (s/def
   ^{:rule "113.3"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::ability-type #{::spell ::activated ::triggered ::static ::mana})
 
 ;; TODO: add "113.5" loyalty-ability
@@ -176,7 +176,7 @@
 ;; FIXME: verify special action types. they should be nine, but there are only six here
 (s/def
   ^{:rule "116.2"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::special-action-type #{::play-a-land ::turn-a-face-down-creature-face-up ::exile-card-with-suspend-in-hand ::put-companion-in-hand ::rolling-the-planar-die ::turn-a-face-down-conspiracy-card-in-the-command-zone-face-up})
 
 ;; TODO: 117: timing and priority: a player can be either :active or :inactive, :with-priority or :without-priority
@@ -184,7 +184,7 @@
 ;; FIXME: 118.9: cost: take into account original and alternative costs
 (s/def
   ^{:rule "118"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::cost-type #{::mandatory ::optional})
 
 ;; TODO: 119: life: consider whether there actualyy is something there than can be specable (I think not)
@@ -196,19 +196,19 @@
 ;; 122: counters
 (s/def
   ^{:rule "122.1b"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::keyword-counter #{::flying ::first-strike ::double-strike ::deathtouch ::haste ::hexproof ::indestructible ::lifelink ::menace ::reach ::trample ::vigilance})
 
 (s/def
   ^{:rule "122"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::counter-type #{::plus-or-minus-counter ::keyword-counter ::loyalty-counter ::poison-counter})
 
 ;; 2xx: parts of a card
 
 (s/def
   ^{:rule "200.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::card (s/keys :opt [::name ::mana-cost ::illustration ::color-indicator ::type ::expansion-symbol ::text-box ::power-and-toughness ::loyalty ::hand-modifier ::life-modifier ::illustration-credit ::legal-text ::collector-number]))
 
 ;; 201: name: not specable
@@ -218,7 +218,7 @@
 ;; FIXME: see 202.3 on how to define this fn
 (s/defn
   ^{:rule "202.3"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::converted-mana-cost)
 
 ;; 203: illustration: not specable
@@ -287,54 +287,54 @@
 ;; also rule 300.1
 (s/def
   ^{:rule "205.2a"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::card-type #{::artifact ::conspiracy ::creature ::enchantment ::instant ::land ::phenomenon ::plane ::planeswalker ::scheme ::sorcery ::tribal ::vanguard})
 
 ;; (s/exercise ::type)
 
 (s/def
   ^{:rule "205.3g"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::artifact-type #{::clue ::contraption ::equipment ::food ::fortification ::gold ::treasure ::vehicle})
 
 (s/def
   ^{:rule: "205.3h"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::enchantment-type #{::aura ::cartouche ::curse ::saga ::shrine})
 
 (s/def
   ^{:rule "205.3i"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::land-type #{::desert ::basic-land-type ::gate ::lair ::locus ::mine ::power-plant ::tower ::urza's})
 
 (s/def
   ^{:rule "205.3i"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::basic-land-type #{::forest ::island ::mountain ::plains ::swamp})
 
 (s/def
   ^{:rule "205.3j"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::planeswalker-type #{::ajani ::aminatou ::angrath ::arlinn ::ashiok ::basri ::bolas ::calix ::chandra ::dack ::daretti ::davriel ::domri ::dovin ::elspeth ::estrid ::freyalise ::garruk ::gideon ::huatli ::jace ::jaya ::karn ::kasmina ::kaya ::kiora ::koth ::liliana ::lukka ::nahiri ::narset ::nissa ::nixilis ::oko ::ral ::rowan ::saheeli ::samut ::sarkhan ::serra ::sorin ::tamiyo ::teferi ::teyo ::tezzeret ::tibalt ::ugin ::venser ::vivien ::vraska ::will ::windgrace ::wrenn ::xenagos ::yanggu ::yanling})
 
 (s/def
   ^{:rule "205.3k"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::spell-type #{::adventure ::arcane ::trap})
 
 (s/def
   ^{:rule "205.3m"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::creature-type #{::advisor ::aetherborn ::ally ::angel ::antelope ::ape ::archer ::archon ::army ::artificer ::assassin ::assembly-worker ::atog ::aurochs ::avatar ::azra ::badger ::barbarian ::basilisk ::bat ::bear ::beast ::beeble ::berserker ::bird ::blinkmoth ::boar ::bringer ::brushwagg ::camarid ::camel ::caribou ::carrier ::cat ::centaur ::cephalid ::chimera ::citizen ::cleric ::cockatrice ::construct ::coward ::crab ::crocodile ::cyclops ::dauthi ::demigod ::demon ::deserter ::devil ::dinosaur ::djinn ::dog ::dragon ::drake ::dreadnought ::drone ::druid ::dryad ::dwarf ::efreet ::egg ::elder ::eldrazi ::elemental ::elephant ::elf ::elk ::eye ::faerie ::ferret ::fish ::flagbearer ::fox ::frog ::fungus ::gargoyle ::germ ::giant ::gnome ::goat ::goblin ::god ::golem ::gorgon ::graveborn ::gremlin ::griffin ::hag ::harpy ::hellion ::hippo ::hippogriff ::homarid ::homunculus ::horror ::horse ::human ::hydra ::hyena ::illusion ::imp ::incarnation ::insect ::jackal ::jellyfish ::juggernaut ::kavu ::kirin ::kithkin ::knight ::kobold ::kor ::kraken ::lamia ::lammasu ::leech ::leviathan ::lhurgoyf ::licid ::lizard ::manticore ::masticore ::mercenary ::merfolk ::metathran ::minion ::minotaur ::mole ::monger ::mongoose ::monk ::monkey ::moonfolk ::mouse ::mutant ::myr ::mystic ::naga ::nautilus ::nephilim ::nightmare ::nightstalker ::ninja ::noble ::noggle ::nomad ::nymph ::octopus ::ogre ::ooze ::orb ::orc ::orgg ::otter ::ouphe ::ox ::oyster ::pangolin ::peasant ::pegasus ::pentavite ::pest ::phelddagrif ::phoenix ::pilot ::pincher ::pirate ::plant ::praetor ::prism ::processor ::rabbit ::rat ::rebel ::reflection ::rhino ::rigger ::rogue ::sable ::salamander ::samurai ::sand ::saproling ::satyr ::scarecrow ::scion ::scorpion ::scout ::sculpture ::serf ::serpent ::servo ::shade ::shaman ::shapeshifter ::shark ::sheep ::siren ::skeleton ::slith ::sliver ::slug ::snake ::soldier ::soltari ::spawn ::specter ::spellshaper ::sphinx ::spider ::spike ::spirit ::splinter ::sponge ::squid ::squirrel ::starfish ::surrakar ::survivor ::tentacle ::tetravite ::thalakos ::thopter ::thrull ::treefolk ::trilobite ::triskelavite ::troll ::turtle ::unicorn ::vampire ::vedalken ::viashino ::volver ::wall ::warlock ::warrior ::weird ::werewolf ::whale ::wizard ::wolf ::wolverine ::wombat ::worm ::wraith ::wurm ::yeti ::zombie ::zubera})
 
 (s/def
   ^{:rule "205.3n"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::planar-type #{::alara ::arkhos ::azgol ::belenon ::bolas’s-meditation-realm ::dominaria ::equilor ::ergamon ::fabacin ::innistrad ::iquatana ::ir ::kaldheim ::kamigawa ::karsus ::kephalai ::kinshala ::kolbahan ::kyneth ::lorwyn ::luvion ::mercadia ::mirrodin ::moag ::mongseng ::muraganda ::new-phyrexia ::phyrexia ::pyrulea ::rabiah ::rath ::ravnica ::regatha ::segovia ::serra’s-realm ::shadowmoor ::shandalar ::ulgrotha ::valla ::vryn ::wildfire ::xerex ::zendikar})
 
 (s/def
   ^{:rule "205.4a"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::supertype #{::basic ::legendary ::ongoing ::snow ::world})
 
 ;; 206: expansion symbol
@@ -343,19 +343,19 @@
 
 (s/def
   ^{:rule "206.2"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::expansion-symbol-rarity #{::mythic-rare ::rare ::uncommon ::common ::timeshifted})
 
 ;; 207: text box
 
 (s/def
   ^{:rule "207"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::text-box-type #{::rules-text ::reminder-text ::flavor-text ::ability-word})
 
 (s/def
   ^{:rule "207.2c"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::ability-word #{::adamant ::addendum ::battalion ::bloodrush ::channel ::chroma ::cohort ::constellation ::converge ::council’s-dilemma ::delirium ::domain ::eminence ::enrage ::fateful-hour ::ferocious ::formidable ::grandeur ::hellbent ::heroic ::imprint ::inspired ::join-forces ::kinship:: ::landfall ::lieutenant ::metalcraft ::morbid ::parley ::radiance ::raid ::rally ::revolt ::spell-mastery ::strive ::sweep ::tempting-offer ::threshold ::undergrowth ::will-of-the-council})
 
 ;; 208: power and toughness
@@ -369,13 +369,13 @@
 ;; FIXME: set-code (three chars)
 (s/def
   ^{:rule "212.1d"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::set-code)
 
 ;; FIXME: language-code (two chars)
 (s/def
   ^{:rule "212.1d"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::language-code)
 
 ;; 3xx: card types
@@ -385,19 +385,19 @@
 ;; FIXME: equipment artifacts can only be legally attached to ("equip") one creature
 (s/def
   ^{:rule "301.5"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::equipment)
 
 ;; FIXME: fortification artifacts can only be legally attached to ("fortify") one land
 (s/def
   ^{:rule "301.6"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::fortification)
 
 ;; FIXME: vehicle artifact can only be legally transformed to an artifact creature ("crewed") by creatures
 (s/def
   ^{:rule "301.7"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::equipment)
 
 
@@ -406,7 +406,7 @@
 ;; FIXME: summoning sickness (no attack, no activated-abilities that include :t)
 (s/def
   ^{:rule "302.7"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::summoning-sickness)
 
 ;; rule 303: enchantments
@@ -414,7 +414,7 @@
 ;; FIXME: aura-enchantments need one target; can only enchant as long as is not a creature
 (s/def
   ^{:rule "303.4"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::aura-enchantment)
 
 ;; TODO: rule 304: instants - nothing to spec here?
@@ -422,7 +422,7 @@
 ;; FIXME: rule 305: lands: only one land can be played per turn; if a land is also something else, it has to be played as a land
 (s/def
   ^{:rule "305"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::player-can-play-a-land)
 
 ;; TODO: rule 306: planeswalkers
@@ -447,27 +447,27 @@
 ;; FIXME: verify rules 40x to see whether something else can be speced
 (s/def
   ^{:rule "400.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::zone #{::library ::hand ::battlefield ::graveyard ::stack ::exile ::command ::ante})
 
 (s/def
   ^{:rule "400.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::shared-zone #{::battlefield ::stack ::exile ::command ::ante})
 
 (s/def
   ^{:rule "400.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::non-shared-zone #{::library ::hand ::graveyard})
 
 (s/def
   ^{:rule "400.2"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::public-zone #{::graveyard ::battlefield ::stack ::exile ::ante ::command})
 
 (s/def
   ^{:rule "400.2"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::hidden-zone #{::library ::hand})
 
 
@@ -475,22 +475,22 @@
 
 (s/def
   ^{:rule "500.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::phase (::beginning ::precombat-main ::combat ::postcombat-main ::ending))
 
 (s/def
   ^{:rule "501.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::beginning-phase-step (::untap ::upkeep ::draw))
 
 (s/def
   ^{:rule "506.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::combat-phase-step (::beginning-of-combat ::declare-attackers ::declare-blockers ::combat-damage ::end-of-combat))
 
 (s/def
   ^{:rule "512.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::ending-phase-step (::end ::cleanup))
 
 
@@ -500,12 +500,12 @@
 
 (s/def
   ^{:rule "601.1"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::playing-a-card #{::playing-a-land ::casting-a-card-as-a-spell})
 
 (s/def
   ^{:rule "601"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::spell-casting-steps (::being-allowed-to-cast ::propose-spell-to-cast ::determinate-legal-casting-cost ::pay-legal-casting-cost ::determinate-legal-target(s) ::choose-legal-target(s) ::move-card-to-stack))
 
 (s/def
@@ -518,19 +518,19 @@
 
 (s/def
   ^{:rule "602,605,606"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::activated-ability-type #{::mana-ability ::loyalty-ability ::other-activated-ability})
 
 (s/def
   ^{:rule "602.2x"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::ability-activation-steps (::being-allowed-to-activate ::propose-ability-to-activate ::determinate-legal-activation-cost ::pay-legal-activation-cost ::determinate-legal-target(s) ::choose-legal-target(s) ::reveal-card-with-ability ::move-ability-to-stack))
 
 ;; 603: triggered abilities
 
 (s/def
   ^{:rule "603"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::every-time-an-event-occurs: (::determine-appliable-triggered-abilities ::activate-appliable-triggered-abilities))
 
 ;; TODO: 603.10: triggered abilities that look back in time
@@ -547,12 +547,12 @@
 
 (s/def
   ^{:rule: "607"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::ability (s/* ::linked-to-ability))
 
 (s/def
   ^{:rule "607"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::linked-to-ability ::ability)
 
 
@@ -567,7 +567,7 @@
 
 (s/def
   ^{:rule "609"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::effect-type #{::text-changing ::replacement ::prevention})
 
 ;; 610: one-shot effects
@@ -592,13 +592,13 @@
 ;; 701: keyword actions
 (s/def
   ^{:rule "702"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::keyword-action #{::activate ::attach ::cast ::counter ::create ::destroy ::discard ::double ::exchange ::exile ::fight ::mill ::play ::regenerate ::reveal ::sacrifice ::scry ::search ::shuffle ::tap ::untap ::fateseal ::clash ::planeswalk ::set-in-motion ::abandon ::proliferate ::transform ::detain ::populate ::monstrosity ::vote ::bolster ::manifest ::support ::investigate ::meld ::goad ::exert ::explore ::assemble ::surveil ::adapt ::amass})
 
 ;; 702: keyword abilities
 (s/def
   ^{:rule "702"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::keyword-ability #{::deathtouch ::defender ::double-strike ::enchant ::equip ::first-strike ::flash ::flying ::haste ::hexproof ::indestructible::intimidate ::landwalk ::lifelink ::protection ::reach ::shroud ::trample ::vigilance ::banding ::rampage ::cumulative-upkeep ::flanking ::flashback ::phasing ::buyback ::shadow ::cycling ::echo ::horsemanship ::fading ::kicker ::flashback ::madness ::fear ::morph ::amplify ::provoke ::storm ::affinity ::entwine ::modular ::sunburst ::bushido ::soulshift :: splice ::offering ::ninjutsu ::epic ::convoke ::dredge ::transmute ::bloodthirst ::haunt ::replicate ::forecast ::graft ::recover ::ripple ::split-second ::suspend ::vanishing ::absorb ::aura-swap ::delve ::fortify ::frenzy ::gravestorm ::poisonous ::transfigure ::champion ::changeling ::evoke ::hideaway ::prowl ::reinforce ::conspire ::persist ::wither ::retrace ::devour ::exalted ::unearth ::cascade ::annihilator ::level-up ::rebound ::totem-armor ::infect ::battle-cry ::living-weapon ::undying ::miracle ::soulbound ::overload ::scavenge ::unleash ::cipher ::evolve ::extort ::fuse ::bestow ::tribute ::dethrone ::hidden-agenda ::outlast ::prowess ::dash ::exploit ::menace ::renown ::awaken ::devoid ::ingest ::myriad ::surge ::skulk ::emerge ::escalate ::melee ::crew ::fabricate ::partner ::undaunted ::improvise ::aftermath ::embalm ::eternalize ::afflict ::assist ::jump-start ::mentor ::afterlife ::riot ::spectacle ::escape ::companion ::mutate})
 
 ;; 703: stated-based actions
@@ -606,7 +606,7 @@
 
 (s/def
   ^{:rule "703,704"
-    ::version "2020.07.03"}
+    ::version "2020.08.07"}
   ::action-type #{::state-based ::turn-based})
 
 ;; 705: flipping a coin
@@ -625,7 +625,7 @@
 ;; 715: adventurer cards
 (s/def
   ^{:rule "708-715"
-    :version "2020.07.03"}
+    :version "2020.08.07"}
   ::card-type #{::split ::flip ::leveler ::double-faced ::meld ::checklist ::saga ::adventurer})
 
 ;; 716: controlling another player
