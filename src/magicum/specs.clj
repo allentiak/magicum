@@ -25,10 +25,13 @@
 (defn unstrument []
   (st/unstrument fns-with-specs))
 
-#_(require
+(comment
+  (require
    '[clojure.spec.alpha :as s]
-   '[clojure.spec.test.alpha :as st])
+   '[clojure.spec.test.alpha :as st]))
 
+
+;; Experiments with basic lands (in progress)
 
 (s/def
   ::basic-land-name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
@@ -39,18 +42,42 @@
 ;; fails as expected
 #_(s/explain ::basic-land-name "Any string outside the list fails")
 
-(s/def ::legal-text string?)
+;;(s/def ::card-legal-text string?)
 ;; works as expected
-#_(s/explain ::legal-text "For now, any string will be a valid legal-text")
+#_(s/explain ::card-legal-text "For now, any string will be a valid legal-text")
 
 (s/def
   ::basic-land-type #{::forest ::island ::mountain ::plains ::swamp})
 
 (s/def
-  ::basic-land-card (s/keys :req [::basic-land-name ::basic-land-type ::basic-land-legal-text]))
+  ::basic-land-card (s/keys :req [::basic-land-name ::basic-land-type ::card-legal-text]))
 
 (def forest-card
-  {:basic-land-type ::forest, :basic-land-name "Forest", :legal-text "This legal text should be valid for now"})
+  {:basic-land-type ::forest, :basic-land-name "Forest", :card-legal-text "This legal text should be valid for now"})
 
 ;; works as expected
 #_(s/explain ::basic-land-card forest-card)
+
+
+;; Experiments with minimalistic cards
+
+(s/def
+  ::card-legal-text string?)
+
+(s/def
+  ::card-name string?)
+
+(s/def
+  ::card (s/keys :req [::card-legal-text ::card-name]))
+
+(s/def
+  ::hand (s/coll-of ::card))
+
+(s/def
+  ::battlefield (s/coll-of ::card))
+
+(s/def
+  ::zone #{::hand ::battlefield})
+
+(s/def
+  ::world (s/keys :req [::hand ::battlefield]))
