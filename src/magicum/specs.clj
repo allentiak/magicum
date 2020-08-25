@@ -4,6 +4,8 @@
    [clojure.spec.alpha :as s]
    [clojure.spec.test.alpha :as st]))
 
+(set! *warn-on-reflection* true)
+
 ;; metadata:
 ;; :rule nnn.nb - Comprehensive Rule on which the element is based on. This is based on MTG Wiki's recommendation of how to referencing the rules.
 ;; :version yyyy.mm.dd - date of the Comprehensive Rules document used to create this element.
