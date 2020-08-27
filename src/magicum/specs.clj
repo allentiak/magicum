@@ -84,13 +84,12 @@
 (s/def
   ::world (s/keys :req [::hand ::battlefield]))
 
-(defn lay-down
-  [{:keys [world card from to]}]
+(defn move-card
+  [world card from to]
   "Given a world, return a new one in which a card from one of its zones is moved to the other zone."
-  (dissoc (:from :world) :card)
-  (assoc (:to :world) :card))
+  (assoc (dissoc world (first (from world))) to card))
 
-(s/fdef lay-down
+(s/fdef move-card
   :args (s/cat :world ::world
                :card ::card
                :from ::zone
