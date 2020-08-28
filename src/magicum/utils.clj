@@ -5,6 +5,17 @@
 (comment
   (require '[clojure.string :as str]))
 
+(defn remove-first
+  [pred coll]
+  "removes first occurrence of pred in coll"
+  ((fn inner [coll]
+     (lazy-seq
+      (when-let [[x & xs] (seq coll)]
+        (if (pred x)
+          xs
+          (cons x (inner xs))))))
+   coll))
+
 (defn subtypes->keywords
   [s]
   "converts a seq of subtypes `Abcd, Bedcu, ..., Serra's Realm, ..., and Zordu` into a seq of keywords"
