@@ -19,14 +19,15 @@
 (defn subtypes->keywords
   [s]
   "converts a seq of subtypes `Abcd, Bedcu, ..., Serra's Realm, ..., and Zordu` into a seq of keywords"
-  (map (comp
-        keyword
-        #(str/replace % #" " "-")
-        str/trim)
-       (-> s
-           (str/replace ", and " ", ")
-           (str/lower-case)
-           (str/split #","))))
+  (map
+   (comp
+    keyword
+    #(str/replace % #" " "-")
+    str/trim
+    (-> s
+        (str/replace ", and " ", ")
+        (str/lower-case)
+        (str/split #",")))))
 
 (defn list->keywords
   [s]
