@@ -9,9 +9,9 @@
   [s]
   "converts a seq of subtypes `Abcd, Bedcu, ..., Serra's Realm, ..., and Zordu` into a seq of keywords"
   (map (comp
-         keyword
-         #(str/replace % #" " "-")
-         str/trim)
+        keyword
+        #(str/replace % #" " "-")
+        str/trim)
        (-> s
            (str/replace ", and " ", ")
            (str/lower-case)
