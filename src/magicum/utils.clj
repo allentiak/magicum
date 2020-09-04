@@ -6,15 +6,11 @@
   (require '[clojure.string :as str]))
 
 (defn remove-first
-  [pred coll]
-  "removes first occurrence of pred in coll"
-  ((fn inner [coll]
-     (lazy-seq
-      (when-let [[x & xs] (seq coll)]
-        (if (pred x)
-          xs
-          (cons x (inner xs))))))
-   coll))
+  [elem coll]
+  "removes first occurrence of elem in coll
+   Source: https://stackoverflow.com/a/7662696"
+  (let [[x xs] (split-with (partial not= elem) coll)]
+    (concat x (rest xs))))
 
 (defn subtypes->keywords
   [s]

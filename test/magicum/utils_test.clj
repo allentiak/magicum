@@ -5,5 +5,6 @@
 
 (set! *warn-on-reflection* true)
 
-(testing "remove-first"
-  (is (= '(1 3 2 4) (utils/remove-first #{2} '(1 2 3 2 4)))))
+(deftest utils-test
+  (testing "remove-first"
+    (is (= '(1 3 2 4) (utils/remove-first 2 '(1 2 3 2 4))))))
