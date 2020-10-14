@@ -215,7 +215,7 @@
 
 ;; 202: mana, cost, and color
 
-;; FIXME: see 202.3 on how to define this fn
+;; FIXME: see 202.3x on how to define this fn
 (s/defn
   ^{:rule "202.3"
     :version "2020.08.07"}
@@ -518,19 +518,19 @@
 
 (s/def
   ^{:rule "602,605,606"
-    :version "2020.08.07"}
+    :version "2020.09.25"}
   ::activated-ability-type #{::mana-ability ::loyalty-ability ::other-activated-ability})
 
 (s/def
   ^{:rule "602.2x"
-    :version "2020.08.07"}
+    :version "2020.09.25"}
   ::ability-activation-steps (::being-allowed-to-activate ::propose-ability-to-activate ::determinate-legal-activation-cost ::pay-legal-activation-cost ::determinate-legal-target(s) ::choose-legal-target(s) ::reveal-card-with-ability ::move-ability-to-stack))
 
 ;; 603: triggered abilities
 
 (s/def
   ^{:rule "603"
-    :version "2020.08.07"}
+    :version "2020.09.25"}
   ::every-time-an-event-occurs: (::determine-appliable-triggered-abilities ::activate-appliable-triggered-abilities))
 
 ;; TODO: 603.10: triggered abilities that look back in time
@@ -547,12 +547,12 @@
 
 (s/def
   ^{:rule: "607"
-    :version "2020.08.07"}
+    :version "2020.09.25"}
   ::ability (s/* ::linked-to-ability))
 
 (s/def
   ^{:rule "607"
-    :version "2020.08.07"}
+    :version "2020.09.25"}
   ::linked-to-ability ::ability)
 
 
@@ -567,7 +567,7 @@
 
 (s/def
   ^{:rule "609"
-    :version "2020.08.07"}
+    :version "2020.09.25"}
   ::effect-type #{::text-changing ::replacement ::prevention})
 
 ;; 610: one-shot effects
@@ -588,17 +588,18 @@
 ;; 7xx: additional rules
 
 ;; 700: general
+;; 700.8: parties
 
 ;; 701: keyword actions
 (s/def
   ^{:rule "702"
-    :version "2020.08.07"}
+    :version "2020.09.25"}
   ::keyword-action #{::activate ::attach ::cast ::counter ::create ::destroy ::discard ::double ::exchange ::exile ::fight ::mill ::play ::regenerate ::reveal ::sacrifice ::scry ::search ::shuffle ::tap ::untap ::fateseal ::clash ::planeswalk ::set-in-motion ::abandon ::proliferate ::transform ::detain ::populate ::monstrosity ::vote ::bolster ::manifest ::support ::investigate ::meld ::goad ::exert ::explore ::assemble ::surveil ::adapt ::amass})
 
 ;; 702: keyword abilities
 (s/def
   ^{:rule "702"
-    :version "2020.08.07"}
+    :version "2020.09.25"}
   ::keyword-ability #{::deathtouch ::defender ::double-strike ::enchant ::equip ::first-strike ::flash ::flying ::haste ::hexproof ::indestructible::intimidate ::landwalk ::lifelink ::protection ::reach ::shroud ::trample ::vigilance ::banding ::rampage ::cumulative-upkeep ::flanking ::flashback ::phasing ::buyback ::shadow ::cycling ::echo ::horsemanship ::fading ::kicker ::flashback ::madness ::fear ::morph ::amplify ::provoke ::storm ::affinity ::entwine ::modular ::sunburst ::bushido ::soulshift :: splice ::offering ::ninjutsu ::epic ::convoke ::dredge ::transmute ::bloodthirst ::haunt ::replicate ::forecast ::graft ::recover ::ripple ::split-second ::suspend ::vanishing ::absorb ::aura-swap ::delve ::fortify ::frenzy ::gravestorm ::poisonous ::transfigure ::champion ::changeling ::evoke ::hideaway ::prowl ::reinforce ::conspire ::persist ::wither ::retrace ::devour ::exalted ::unearth ::cascade ::annihilator ::level-up ::rebound ::totem-armor ::infect ::battle-cry ::living-weapon ::undying ::miracle ::soulbound ::overload ::scavenge ::unleash ::cipher ::evolve ::extort ::fuse ::bestow ::tribute ::dethrone ::hidden-agenda ::outlast ::prowess ::dash ::exploit ::menace ::renown ::awaken ::devoid ::ingest ::myriad ::surge ::skulk ::emerge ::escalate ::melee ::crew ::fabricate ::partner ::undaunted ::improvise ::aftermath ::embalm ::eternalize ::afflict ::assist ::jump-start ::mentor ::afterlife ::riot ::spectacle ::escape ::companion ::mutate})
 
 ;; 703: stated-based actions
@@ -606,7 +607,7 @@
 
 (s/def
   ^{:rule "703,704"
-    ::version "2020.08.07"}
+    ::version "2020.09.25"}
   ::action-type #{::state-based ::turn-based})
 
 ;; 705: flipping a coin
@@ -625,8 +626,8 @@
 ;; 715: adventurer cards
 (s/def
   ^{:rule "708-715"
-    :version "2020.08.07"}
-  ::card-type #{::split ::flip ::leveler ::double-faced ::meld ::checklist ::saga ::adventurer})
+    :version "2020.09.25"}
+  ::card-type #{::split ::flip ::leveler ::modal-double-faced ::transforming-double-faced ::meld ::substitute ::saga ::adventurer})
 
 ;; 716: controlling another player
 
