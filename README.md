@@ -22,9 +22,9 @@ Whereas the original [_Classical Latin_](https://en.wikipedia.org/wiki/Classical
 
 ## Release Information
 
-This project follows the version scheme `MAJOR.MINOR.COMMITS`, where `MAJOR` and `MINOR` provide some relative indication of the size of the change, but do not follow semantic versioning. `COMMITS` is an ever-increasing counter of commits since the beginning of this repository.
+When released, this project will follow the version scheme `MAJOR.MINOR.COMMITS`, where `MAJOR` and `MINOR` provide some relative indication of the size of the change, but do not follow semantic versioning, and `COMMITS` is an ever-increasing counter of commits since the beginning of this repository.
 
-In general, all changes endeavor to be non-breaking (by moving to new names rather than by breaking existing names). For a more detailed rationale, please refer to [Rich Hickey's "spec-ulation Keynote"](https://www.youtube.com/watch?v=oyLBGkS5ICk) from [Clojure/conj 2016](https://2016.clojure-conj.org/).
+In general, after release all changes will endeavor to be non-breaking (by moving to new names rather than by breaking existing names). For a more detailed rationale, please refer to [Rich Hickey's "spec-ulation Keynote"](https://www.youtube.com/watch?v=oyLBGkS5ICk) from [Clojure/conj 2016](https://2016.clojure-conj.org/).
 
 Latest release: (none yet)
 
