@@ -1,4 +1,4 @@
-(ns magicum.specs
+(ns magicum.specs.context1
   (:gen-class)
   (:require
    [clojure.spec.alpha :as s]
@@ -19,7 +19,7 @@
 
 
 (def ^:private fns-with-specs
-  [`lay-down])
+  [`move-card])
 
 (defn instrument []
   (st/instrument fns-with-specs))
@@ -79,7 +79,8 @@
   ::battlefield (s/coll-of ::card))
 
 (s/def
-  ::zone #{::hand ::battlefield})
+  ::zone (s/or ::hand
+               ::battlefield))
 
 (s/def
   ::world (s/keys :req [::hand ::battlefield]))
@@ -87,13 +88,16 @@
 (defn move-card
   [world card from to]
   "Given a world, return a new one in which a card from one of its zones is moved to the other zone."
-  (assoc (dissoc world (first (from world))) to card))
+  nil)
+  ;; (assoc (dissoc world (first (from world))) to card))
 
 (s/fdef move-card
   :args (s/cat :world ::world
-               :card ::card
+               :card-name ::card-name
                :from ::zone
                :to ::zone)
-  :ret ::world
-  :fn #(and (= (dissoc (:to (:ret %)) :card) (:to %))
-            (= (assoc (:from (:ret %)) :card (:from %)))))
+  :ret nil?)
+  ;; :fn #(and (= (dissoc (:to (:ret %)) :card) (:to %))
+  ;;           (= (assoc (:from (:ret %)) :card (:from %)))))
+
+(st/instrument `move-card)
