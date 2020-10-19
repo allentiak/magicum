@@ -66,11 +66,13 @@ At this point, probably too many. To be discovered! :-)
 
 - Base the aforementioned specifications on the most recent version of the Magic Comprehensive Rules, as published by the Magic copyright holders. As a reference, you will find a copy of the latest version used in [/doc/third-party](/resources/third-party).
 
-- Stand on the shoulders of giants: use Systematic Program Design to strive for achieving a Clean Architecture.
+- Stand on the shoulders of giants: use Systematic Program Design and (Functional) Domain-Driven Development to strive for achieving a Clean Architecture.
 
-  Systematic Program Design is explained in depth in ["How to Design Programs, Second Edition"](https://htdp.org), by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, and Shriram Krishnamurthi.
+  Systematic Program Design is (greatly!) explained with both depth and simplicity in ["How to Design Programs, Second Edition"](https://htdp.org), by Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, and Shriram Krishnamurthi.
 
-  The Clean Architecture is described in ["The Clean Architecture"](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), by Robert C. Martin (a.k.a. "Uncle Bob").
+  A Functional take on Domain-Driven Development is (excellently!) shown in ["Domain Modeling made Functional"](https://fsharpforfunandprofit.com/books/), by Scott Wlaschin.
+
+  The Clean Architecture is (very entertainingly!) described in ["The Clean Architecture"](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), by Robert C. Martin (a.k.a. "Uncle Bob").
 
 
 ### CI/CD
