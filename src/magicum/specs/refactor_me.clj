@@ -1,4 +1,4 @@
-(ns magicum.specs.specs
+(ns magicum.specs.refactor-me
   (:gen-class)
   (:require [clojure.spec.alpha :as s]))
 
