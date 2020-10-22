@@ -9,11 +9,12 @@
 (s/def
     ::basic-land-name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
 
-;; fails as expected
-;;(s/explain ::basic-land-name "Any string outside the list fails")
+(comment
+  ;; fails as expected
+  (s/explain ::basic-land-name "Any string outside the list fails")
 
-;; works as expected
-;;(s/explain ::basic-land-name "Island")
+  ;; works as expected
+  (s/explain ::basic-land-name "Island"))
 
 
 (s/def
@@ -22,19 +23,23 @@
 (s/def
   ::card (s/keys :req [::card-name]))
 
-;; fails as expected (name not in set)
-;;(s/explain ::card {::card-name "Fails"})
+(comment
+  ;; fails as expected (name not in set)
+  (s/explain ::card {::card-name "Fails"})
 
-;; fails as expected (key is not fully qualified)
-;;(s/explain ::card {:card-name "Island"})
+  ;; fails as expected (key is not fully qualified)
+  (s/explain ::card {:card-name "Island"})
 
-;; works as expected
-;; (will fail if keys are not fully qualified)
-;;(s/explain ::card {::card-name "Island"})
+  ;; works as expected
+  ;; (will fail if keys are not fully qualified)
+  (s/explain ::card {::card-name "Island"}))
+
 
 (def plains {::card-name "Plains"})
-;; works as expected
-(s/explain ::card plains)
+
+(comment
+  ;; works as expected
+  (s/explain ::card plains))
 
 (def island {::card-name "Island"})
 (def swamp {::card-name "Swamp"})
@@ -50,18 +55,21 @@
 (s/def
   ::battlefied ::zone)
 
-;; works as expected
-;;(s/explain ::zone (list plains))
+(comment
+  ;; works as expected
+  (s/explain ::zone (list plains))
 
-;; works as expected
-;;(s/explain ::battlefied (list mountain swamp plains))
+  ;; works as expected
+  (s/explain ::battlefied (list mountain swamp plains)))
 
 
 (s/def
   ::world (s/keys :req [::hand ::battlefield]))
 
-;; works as expected
-;;(s/explain ::world {::hand (list island forest forest swamp mountain) ::battlefield (list mountain)})
+(comment
+  ;; works as expected
+  (s/explain ::world {::hand (list island forest forest swamp mountain) ::battlefield (list mountain)}))
+
 
 (defn play-a-card
     [{:keys [world card from to]}]
