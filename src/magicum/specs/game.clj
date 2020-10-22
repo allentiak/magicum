@@ -53,14 +53,14 @@
   ::hand ::zone)
 
 (s/def
-  ::battlefied ::zone)
+  ::battlefield ::zone)
 
 (comment
   ;; works as expected
   (s/explain ::zone (list plains))
 
   ;; works as expected
-  (s/explain ::battlefied (list mountain swamp plains)))
+  (s/explain ::battlefield (list mountain swamp plains)))
 
 
 (s/def
