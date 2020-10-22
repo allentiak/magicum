@@ -57,10 +57,10 @@
 
 (comment
   ;; works as expected
-  (s/explain ::zone (list plains))
+  (s/explain ::zone [plains])
 
   ;; works as expected
-  (s/explain ::battlefield (list mountain swamp plains)))
+  (s/explain ::battlefield [mountain swamp plains]))
 
 
 (s/def
@@ -68,7 +68,7 @@
 
 (comment
   ;; works as expected
-  (s/explain ::world {::hand (list island forest forest swamp mountain) ::battlefield (list mountain)}))
+  (s/explain ::world {::hand [island forest forest swamp mountain] ::battlefield [mountain]}))
 
 
 (defn play-a-card
