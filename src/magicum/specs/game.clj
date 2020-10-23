@@ -83,9 +83,9 @@
                  :card ::card
                  :from ::zone
                  :to ::zone)
-    :ret nil?)
-    ;; :fn #(and (= (dissoc (:to (:ret %)) :card) (:to %))
-    ;;           (= (assoc (:from (:ret %)) :card (:from %)))))
+    :ret ::world
+    :fn #(and (= (dissoc (:to (:ret %)) :card) (:to %))
+              (= (assoc (:from (:ret %)) :card (:from %)))))
 
 (comment
   (s/exercise-fn `play-a-card)
