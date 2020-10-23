@@ -68,7 +68,8 @@
 
 (comment
   ;; works as expected
-  (s/explain ::world {::hand [island forest forest swamp mountain] ::battlefield [mountain]}))
+  (def my-world {::hand [island forest forest swamp mountain] ::battlefield [mountain]})
+  (s/explain ::world my-world))
 
 
 (defn play-a-card
@@ -85,6 +86,10 @@
     :ret nil?)
     ;; :fn #(and (= (dissoc (:to (:ret %)) :card) (:to %))
     ;;           (= (assoc (:from (:ret %)) :card (:from %)))))
+
+(comment
+  (s/exercise-fn `play-a-card)
+  (play-a-card my-world island (:hand my-world) (:battlefield my-world)))
 
 
 (def ^:private fns-with-specs
