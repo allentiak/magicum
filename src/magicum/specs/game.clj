@@ -73,14 +73,14 @@
 
 
 (defn play-a-card
-    [{:keys [world card from to]}]
+    [world card from to]
     "Given a world, return a new one in which a card from one of its zones is moved to the other zone."
-    nil
-    (assoc (dissoc world (first (from world))) to card))
+    nil)
+    ;;(assoc (dissoc :world (first (:from :world))) :to :card))
 
 (s/fdef play-a-card
     :args (s/cat :world ::world
-                 :card-name ::card-name
+                 :card ::card
                  :from ::zone
                  :to ::zone)
     :ret nil?)
