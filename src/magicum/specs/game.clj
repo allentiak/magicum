@@ -1,7 +1,13 @@
 (ns magicum.specs.game
   (:gen-class)
   (:require [clojure.spec.alpha :as s]
-            [clojure.spec.test.alpha :as st]))
+            [clojure.spec.test.alpha :as st]
+            [magicum.utils :as utils]))
+
+(comment
+  (require '[clojure.spec.alpha :as s]
+           '[clojure.spec.test.alpha :as st]
+           '[magicum.utils :as utils]))
 
 (set! *warn-on-reflection* true)
 
@@ -44,7 +50,7 @@
 (def forest {::card-name "Forest"})
 
 (s/def
-  ::zone (s/coll-of ::card))
+  ::zone (s/coll-of (s/nilable ::card)))
 
 (s/def
   ::hand ::zone)
@@ -53,6 +59,9 @@
   ::battlefield ::zone)
 
 (comment
+  ;; works as expected
+  (s/explain ::zone [])
+
   ;; works as expected
   (s/explain ::zone [plains])
 
@@ -64,14 +73,18 @@
 
 (comment
   ;; works as expected
-  (def my-world {::hand [island forest forest swamp mountain] ::battlefield [mountain]})
+  (def my-world {::hand [island forest plains swamp plains mountain] ::battlefield []})
   (s/explain ::world my-world))
 
 
 (defn play-a-card
-    [world card from to]
-    "Given a world, return a new one in which a card from one of its zones is moved to the other zone."
-    (assoc (dissoc :world (first (:from :world))) :to :card))
+  [world card-idx from-zone-name to-zone-name]
+  "Given a world, return a new one in which the idx-th card from one of its zones is moved to the other zone."
+  (let [from (from-zone-name world)
+        card (get from card-idx)
+        new-from (utils/remove-first card from)
+        new-to (conj (to-zone-name world) card)]
+    (assoc world from-zone-name new-from to-zone-name new-to)))
 
 (s/fdef play-a-card
     :args (s/cat :world ::world
