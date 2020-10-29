@@ -5,9 +5,8 @@
 
 (set! *warn-on-reflection* true)
 
-
 (s/def
-    ::basic-land-name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
+  ::basic-land-name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
 
 (comment
   ;; fails as expected
@@ -16,9 +15,8 @@
   ;; works as expected
   (s/explain ::basic-land-name "Island"))
 
-
 (s/def
-    ::card-name ::basic-land-name)
+  ::card-name ::basic-land-name)
 
 (s/def
   ::card (s/keys :req [::card-name]))
@@ -33,7 +31,6 @@
   ;; works as expected
   ;; (will fail if keys are not fully qualified)
   (s/explain ::card {::card-name "Island"}))
-
 
 (def plains {::card-name "Plains"})
 
@@ -62,7 +59,6 @@
   ;; works as expected
   (s/explain ::battlefield [mountain swamp plains]))
 
-
 (s/def
   ::world (s/keys :req [::hand ::battlefield]))
 
@@ -89,7 +85,6 @@
 (comment
   (s/exercise-fn `play-a-card)
   (play-a-card my-world island (:hand my-world) (:battlefield my-world)))
-
 
 (def ^:private fns-with-specs
   [`play-a-card])
