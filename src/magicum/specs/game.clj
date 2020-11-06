@@ -91,8 +91,8 @@
                :from-zone ::zone
                :to-zone ::zone)
   :ret ::world
-  :fn #(and (= (dissoc (:to-zone (:ret %)) :card-idx) (:to-zone %))
-            (= (assoc (:from-zone (:ret %)) :card-idx (:from-zone %)))))
+  :fn #(and (= (disj (:to-zone (:ret %)) :card-idx) (:to-zone %))
+            (= (conj (:from-zone (:ret %)) :card-idx) (:from-zone %))))
 
 (comment
   (s/exercise-fn `play-a-card)
