@@ -76,7 +76,6 @@
   (def my-world {::hand [island forest plains swamp plains mountain] ::battlefield []})
   (s/explain ::world my-world))
 
-
 (defn play-a-card
   [world card-idx from-zone-name to-zone-name]
   "Given a world, return a new one in which the idx-th card from one of its zones is moved to the other zone."
@@ -87,13 +86,13 @@
     (assoc world from-zone-name new-from to-zone-name new-to)))
 
 (s/fdef play-a-card
-    :args (s/cat :world ::world
-                 :card ::card
-                 :from ::zone
-                 :to ::zone)
-    :ret ::world
-    :fn #(and (= (dissoc (:to (:ret %)) :card) (:to %))
-              (= (assoc (:from (:ret %)) :card (:from %)))))
+  :args (s/cat :world ::world
+               :card-idx nat-int?
+               :from-zone ::zone
+               :to-zone ::zone)
+  :ret ::world
+  :fn #(and (= (dissoc (:to-zone (:ret %)) :card-idx) (:to-zone %))
+            (= (assoc (:from-zone (:ret %)) :card-idx (:from-zone %)))))
 
 (comment
   (s/exercise-fn `play-a-card)
