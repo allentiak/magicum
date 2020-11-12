@@ -11,12 +11,10 @@
 ;;     (is (= empty-zone (remove-card-from-zone card non-empty-zone)))))
 
 (deftest basic-tests
-  (let [card {::card-name "Island"}
-        old-world {::hand [card] ::battlefield []}
-        new-world {::hand [] ::battlefield [card]}
-        from-zone (::hand old-world)
-        to-zone (::battlefield old-world)]
+  (let [card {:card-name "Island"}
+        old-world {:hand [card] :battlefield []}
+        new-world {:hand [] :battlefield [card]}]
     (testing "world consistency"
-      (is (= new-world (specs/play-a-card old-world 0 from-zone to-zone))))))
+      (is (= new-world (specs/play-a-card old-world 0 :hand :battlefield))))))
 
 (specs/instrument)

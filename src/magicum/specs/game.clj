@@ -88,8 +88,8 @@
 (s/fdef play-a-card
   :args (s/cat :world ::world
                :card-idx nat-int?
-               :from-zone ::zone
-               :to-zone ::zone)
+               :from-zone keyword?
+               :to-zone keyword?)
   :ret ::world
   :fn #(and (= (disj (:to-zone (:ret %)) :card-idx) (:to-zone %))
             (= (conj (:from-zone (:ret %)) :card-idx) (:from-zone %))))
