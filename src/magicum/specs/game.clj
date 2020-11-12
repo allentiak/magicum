@@ -77,8 +77,8 @@
   (s/explain ::world my-world))
 
 (defn play-a-card
-  [world card-idx from-zone-name to-zone-name]
   "Given a world, return a new one in which the idx-th card from one of its zones is moved to the other zone."
+  [world card-idx from-zone-name to-zone-name]
   (let [from (from-zone-name world)
         card (get from card-idx)
         new-from (utils/remove-first card from)
@@ -88,15 +88,23 @@
 (s/fdef play-a-card
   :args (s/cat :world ::world
                :card-idx nat-int?
-               :from-zone keyword?
-               :to-zone keyword?)
+               :from-zone-name keyword?
+               :to-zone-name keyword?)
   :ret ::world
-  :fn #(and (= (disj (:to-zone (:ret %)) :card-idx) (:to-zone %))
-            (= (conj (:from-zone (:ret %)) :card-idx) (:from-zone %))))
+  :fn #(and (= (disj (:to-zone-name (:ret %)) :card-idx) (:to-zone-name %))
+            (= (conj (:from-zone-name (:ret %)) :card-idx) (:from-zone-name %))))
 
 (comment
   (s/exercise-fn `play-a-card)
-  (play-a-card my-world island (:hand my-world) (:battlefield my-world)))
+  (play-a-card my-world 0 ::hand ::battlefield))
+  ;; => #:magicum.specs.game{:hand
+;; (#:magicum.specs.game{:card-name "Forest"}
+;; #:magicum.specs.game{:card-name "Plains"}
+;; #:magicum.specs.game{:card-name "Swamp"}
+;; #:magicum.specs.game{:card-name "Plains"}
+;; #:magicum.specs.game{:card-name "Mountain"},
+;; :battlefield [#:magicum.specs.game{:card-name "Island"}]
+
 
 (def ^:private fns-with-specs
   [`play-a-card])
