@@ -8,7 +8,7 @@
 
 ;; This file is intended as a formal specification of the Comprehensive Rules document. It used to have actual spec metadata. As clojure.spec 1.x does not support metadata (the upcoming 2.x version should), this file was originally "uncompilable". However, the idea is to make this file compilable; so that metadata has been retired in favor of an ugly 'def' block.
 
-(def comprehensive-rules-version "2020.09.25")
+(def comprehensive-rules-version "2020.11.20")
 
 ;; 1xx: game concepts
 
@@ -516,7 +516,7 @@
 
 ;; 702: keyword abilities
 (s/def
-  ::keyword-ability #{::deathtouch ::defender ::double-strike ::enchant ::equip ::first-strike ::flash ::flying ::haste ::hexproof ::indestructible ::intimidate ::landwalk ::lifelink ::protection ::reach ::shroud ::trample ::vigilance ::banding ::rampage ::cumulative-upkeep ::flanking ::flashback ::phasing ::buyback ::shadow ::cycling ::echo ::horsemanship ::fading ::kicker ::flashback ::madness ::fear ::morph ::amplify ::provoke ::storm ::affinity ::entwine ::modular ::sunburst ::bushido ::soulshift ::splice ::offering ::ninjutsu ::epic ::convoke ::dredge ::transmute ::bloodthirst ::haunt ::replicate ::forecast ::graft ::recover ::ripple ::split-second ::suspend ::vanishing ::absorb ::aura-swap ::delve ::fortify ::frenzy ::gravestorm ::poisonous ::transfigure ::champion ::changeling ::evoke ::hideaway ::prowl ::reinforce ::conspire ::persist ::wither ::retrace ::devour ::exalted ::unearth ::cascade ::annihilator ::level-up ::rebound ::totem-armor ::infect ::battle-cry ::living-weapon ::undying ::miracle ::soulbound ::overload ::scavenge ::unleash ::cipher ::evolve ::extort ::fuse ::bestow ::tribute ::dethrone ::hidden-agenda ::outlast ::prowess ::dash ::exploit ::menace ::renown ::awaken ::devoid ::ingest ::myriad ::surge ::skulk ::emerge ::escalate ::melee ::crew ::fabricate ::partner ::undaunted ::improvise ::aftermath ::embalm ::eternalize ::afflict ::assist ::jump-start ::mentor ::afterlife ::riot ::spectacle ::escape ::companion ::mutate})
+  ::keyword-ability #{::deathtouch ::defender ::double-strike ::enchant ::encore ::equip ::first-strike ::flash ::flying ::haste ::hexproof ::indestructible ::intimidate ::landwalk ::lifelink ::protection ::reach ::shroud ::trample ::vigilance ::banding ::rampage ::cumulative-upkeep ::flanking ::flashback ::phasing ::buyback ::shadow ::cycling ::echo ::horsemanship ::fading ::kicker ::flashback ::madness ::fear ::morph ::amplify ::provoke ::storm ::affinity ::entwine ::modular ::sunburst ::bushido ::soulshift ::splice ::offering ::ninjutsu ::epic ::convoke ::dredge ::transmute ::bloodthirst ::haunt ::replicate ::forecast ::graft ::recover ::ripple ::split-second ::suspend ::vanishing ::absorb ::aura-swap ::delve ::fortify ::frenzy ::gravestorm ::poisonous ::transfigure ::champion ::changeling ::evoke ::hideaway ::prowl ::reinforce ::conspire ::persist ::wither ::retrace ::devour ::exalted ::unearth ::cascade ::annihilator ::level-up ::rebound ::totem-armor ::infect ::battle-cry ::living-weapon ::undying ::miracle ::soulbound ::overload ::scavenge ::unleash ::cipher ::evolve ::extort ::fuse ::bestow ::tribute ::dethrone ::hidden-agenda ::outlast ::prowess ::dash ::exploit ::menace ::renown ::awaken ::devoid ::ingest ::myriad ::surge ::skulk ::emerge ::escalate ::melee ::crew ::fabricate ::partner ::undaunted ::improvise ::aftermath ::embalm ::eternalize ::afflict ::assist ::jump-start ::mentor ::afterlife ::riot ::spectacle ::escape ::companion ::mutate})
 
 ;; 703: stated-based actions
 ;; 704: turn-based actions
@@ -593,7 +593,7 @@
 
 ;; 902: variant: vanguard
 
-;; 903: variant: commander
+;; 903: variants: commander, commander draft
 
 ;; 904: variant: archenemy
 
