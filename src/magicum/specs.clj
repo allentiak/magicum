@@ -16,7 +16,6 @@
 
 (set! *warn-on-reflection* true)
 
-
 (s/def
   :land.basic/name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
 
@@ -102,6 +101,15 @@
 ;; #:magicum.specs.game{:card-name "Mountain"},
 ;; :battlefield [#:magicum.specs.game{:card-name "Island"}]
 
+
+(defn play-a-card
+  "Given a world, return a new one in which the idx-th card from one of its zones is moved to the other zone."
+  [world card-idx from-zone-name to-zone-name]
+  (let [from (from-zone-name world)
+        card (get from card-idx)
+        new-from (utils/remove-first card from)
+        new-to (conj (to-zone-name world) card)]
+    (assoc world from-zone-name new-from to-zone-name new-to)))
 
 (def ^:private fns-with-specs
   [`play-a-card])

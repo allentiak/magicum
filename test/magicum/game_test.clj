@@ -15,7 +15,7 @@
         old-world {:zone/hand [card] :zone/battlefield []}
         new-world {:zone/hand [] :zone/battlefield [card]}]
     (testing "world consistency"
-      (is (= new-world (game/play-a-card old-world 0 :zone/hand :zone/battlefield))))))
+      (is (= new-world (specs/play-a-card old-world 0 :zone/hand :zone/battlefield))))))
 
 #_(magicum.specs.game/play-a-card
    {:magicum.specs.game/hand        [{:magicum.specs.game/card-name "Island"}]
