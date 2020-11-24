@@ -8,11 +8,11 @@
 (set! *warn-on-reflection* true)
 
 (deftest basic-tests
-  (let [card      {:game/card-name "Island"}
-        old-world :game/{:hand [card] :battlefield []}
-        new-world :magicum.specs.game{:hand [] :battlefield [card]}]
+  (let [card      {:card/name "Island"}
+        old-world {:zone/hand [card] :zone/battlefield []}
+        new-world {:zone/hand [] :zone/battlefield [card]}]
     (testing "world consistency"
-      (is (= new-world (specs/play-a-card old-world 0 :game/hand :game/battlefield))))))
+      (is (= new-world (specs/play-a-card old-world 0 :zone/hand :zone/battlefield))))))
 
 #_(magicum.specs.game/play-a-card
    {:magicum.specs.game/hand        [{:magicum.specs.game/card-name "Island"}]

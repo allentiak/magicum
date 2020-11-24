@@ -16,70 +16,69 @@
 
 (set! *warn-on-reflection* true)
 
+
 (s/def
-  ::basic-land-name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
+  :land.basic/name #{"Forest" "Island" "Mountain" "Plains" "Swamp"})
 
 (comment
   ;; fails as expected
-  (s/explain ::basic-land-name "Any string outside the list fails")
+  (s/explain :land.basic/name "Any string outside the list fails")
 
   ;; works as expected
-  (s/explain ::basic-land-name "Island"))
+  (s/explain :land.basic/name "Island"))
 
 (s/def
-  ::card-name ::basic-land-name)
+  :card/name :land.basic/name)
 
 (s/def
-  ::card (s/keys :req [::card-name]))
+  :object/card (s/keys :req [:card/name]))
 
 (comment
   ;; fails as expected (name not in set)
-  (s/explain ::card {::card-name "Fails"})
+  (s/explain :object/card {:card/name "Fails"})
 
   ;; fails as expected (key is not fully qualified)
-  (s/explain ::card {:card-name "Island"})
+  (s/explain :object/card {:card/name "Island"})
 
   ;; works as expected
   ;; (will fail if keys are not fully qualified)
-  (s/explain ::card {::card-name "Island"}))
+  (s/explain :object/card {:card/name "Island"}))
 
-(def plains {::card-name "Plains"})
-
-(comment
-  ;; works as expected
-  (s/explain ::card plains))
-
-(def island {::card-name "Island"})
-(def swamp {::card-name "Swamp"})
-(def mountain {::card-name "Mountain"})
-(def forest {::card-name "Forest"})
-
-(s/def
-  ::zone (s/coll-of (s/nilable ::card)))
-
-(s/def
-  ::hand ::zone)
-
-(s/def
-  ::battlefield ::zone)
+(def plains {:card/name "Plains"})
 
 (comment
   ;; works as expected
-  (s/explain ::zone [])
+  (s/explain :object/card plains))
 
-  ;; works as expected
-  (s/explain ::zone [plains])
-
-  ;; works as expected
-  (s/explain ::battlefield [mountain swamp plains]))
+(def island {:card/name "Island"})
+(def swamp {:card/name "Swamp"})
+(def mountain {:card/name "Mountain"})
+(def forest {:card/name "Forest"})
 
 (s/def
-  ::world (s/keys :req [::hand ::battlefield]))
+  :game/zone (s/coll-of (s/nilable :object/card)))
+
+(s/def
+  :zone/hand :game/zone)
+
+(s/def
+  :zone/battlefield :game/zone)
 
 (comment
   ;; works as expected
-  (def my-world {::hand [island forest plains swamp plains mountain] ::battlefield []})
-  (s/explain ::world my-world))
+  (s/explain :game/zone [])
+
+  ;; works as expected
+  (s/explain :game/zone [plains])
+
+  ;; works as expected
+  (s/explain :zone/battlefield [mountain swamp plains]))
+
+(s/def
+  :game/world (s/keys :req [:zone/hand :zone/battlefield]))
+
+(comment
+  ;; works as expected
 
 (defn play-a-card
   "Given a world, return a new one in which the idx-th card from one of its zones is moved to the other zone."
@@ -89,19 +88,21 @@
         new-from (utils/remove-first card from)
         new-to (conj (to-zone-name world) card)]
     (assoc world from-zone-name new-from to-zone-name new-to)))
+  (def my-world {:zone/hand [island forest plains swamp plains mountain] :zone/battlefield []})
+  (s/explain :game/world my-world))
 
 (s/fdef play-a-card
-  :args (s/cat :world ::world
+  :args (s/cat :world :game/world
                :card-idx nat-int?
                :from-zone-name keyword?
                :to-zone-name keyword?)
-  :ret ::world
+  :ret :game/world
   :fn #(and (= (disj (:to-zone-name (:ret %)) :card-idx) (:to-zone-name %))
             (= (conj (:from-zone-name (:ret %)) :card-idx) (:from-zone-name %))))
 
 (comment
   (s/exercise-fn `play-a-card)
-  (play-a-card my-world 0 ::hand ::battlefield))
+  (play-a-card my-world 0 :zone/hand :zone/battlefield))
   ;; => #:magicum.specs.game{:hand
 ;; (#:magicum.specs.game{:card-name "Forest"}
 ;; #:magicum.specs.game{:card-name "Plains"}
