@@ -79,15 +79,6 @@
 
 (comment
   ;; works as expected
-
-(defn play-a-card
-  "Given a world, return a new one in which the idx-th card from one of its zones is moved to the other zone."
-  [world card-idx from-zone-name to-zone-name]
-  (let [from (from-zone-name world)
-        card (get from card-idx)
-        new-from (utils/remove-first card from)
-        new-to (conj (to-zone-name world) card)]
-    (assoc world from-zone-name new-from to-zone-name new-to)))
   (def my-world {:zone/hand [island forest plains swamp plains mountain] :zone/battlefield []})
   (s/explain :game/world my-world))
 
