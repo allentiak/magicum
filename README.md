@@ -1,4 +1,4 @@
-# magicum
+# magicum ![CI status](https://github.com/allentiak/magicum/workflows/tools.deps-builder/badge.svg)
 
 > **magicum**
 > 1. Latin: the nominative _neuter_ singular of magicus.
@@ -73,11 +73,6 @@ At this point, probably too many. To be discovered! :-)
   A Functional take on Domain-Driven Development is (excellently!) shown in ["Domain Modeling made Functional"](https://fsharpforfunandprofit.com/books/), by Scott Wlaschin.
 
   The Clean Architecture is (very entertainingly!) described in ["The Clean Architecture"](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), by Robert C. Martin (a.k.a. "Uncle Bob").
-
-
-### CI/CD
-
-FIXME: add CI/CD setup data.
 
 
 ## Acknowledgements
