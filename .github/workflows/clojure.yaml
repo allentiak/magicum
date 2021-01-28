@@ -10,4 +10,4 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Run tests
-        run: clojure -A:test:runner
+        run: clojure -M:test:runner
