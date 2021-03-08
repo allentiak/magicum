@@ -8,7 +8,7 @@
 
 ;; This file is intended as a formal specification of the Comprehensive Rules document. It used to have actual spec metadata. As clojure.spec 1.x does not support metadata (the upcoming 2.x version should), this file was originally "uncompilable". However, the idea is to make this file compilable; so that metadata has been retired in favor of an ugly 'def' block.
 
-(def comprehensive-rules-version "2020.11.20")
+(def comprehensive-rules-version "2021.02.15")
 
 ;; 1xx: game concepts
 
@@ -121,7 +121,7 @@
 
 ;; 111: tokens
 
-;; TODO: review "111.10a-c" to see whether predefined tokens should be added here
+;; TODO: review "111.10a-e" to see whether predefined tokens should be added here
 
 
 ;; 112: spells
@@ -145,10 +145,8 @@
 
 ;; 116: special actions
 
-;; FIXME: verify special action types. they should be nine, but there are only six here
-;; 116.2
 (s/def
-  ::special-action-type #{::play-a-land ::turn-a-face-down-creature-face-up ::exile-card-with-suspend-in-hand ::put-companion-in-hand ::rolling-the-planar-die ::turn-a-face-down-conspiracy-card-in-the-command-zone-face-up})
+  ::special-action-type #{::play-a-land ::turn-a-face-down-creature-face-up ::take-an-action-at-a-later-time ::ignore-an-effect-for-a-duration ::discard-at-instant-speed ::exile-card-with-suspend-from-hand ::put-companion-card-in-hand ::exile-card-with-fortell-from-hand ::rolling-the-planar-die ::turn-a-face-down-conspiracy-card-in-the-command-zone-face-up})
 
 ;; TODO: 117: timing and priority: a player can be either :active or :inactive, :with-priority or :without-priority
 
@@ -261,7 +259,7 @@
 
 ;; 205.3h
 (s/def
-  ::enchantment-type #{::aura ::cartouche ::curse ::saga ::shrine})
+  ::enchantment-type #{::aura ::cartouche ::curse ::rune ::saga ::shard ::shrine})
 
 
 ;; 205.3i
@@ -274,7 +272,7 @@
 
 ;; 205.3j
 (s/def
-  ::planeswalker-type #{::ajani ::aminatou ::angrath ::arlinn ::ashiok ::basri ::bolas ::calix ::chandra ::dack ::daretti ::davriel ::domri ::dovin ::elspeth ::estrid ::freyalise ::garruk ::gideon ::huatli ::jace ::jaya ::karn ::kasmina ::kaya ::kiora ::koth ::liliana ::lukka ::nahiri ::narset ::nissa ::nixilis ::oko ::ral ::rowan ::saheeli ::samut ::sarkhan ::serra ::sorin ::tamiyo ::teferi ::teyo ::tezzeret ::tibalt ::ugin ::venser ::vivien ::vraska ::will ::windgrace ::wrenn ::xenagos ::yanggu ::yanling})
+  ::planeswalker-type #{::ajani ::aminatou ::angrath ::arlinn ::ashiok ::basri ::bolas ::calix ::chandra ::dack ::daretti ::davriel ::domri ::dovin ::elspeth ::estrid ::freyalise ::garruk ::gideon ::huatli ::jace ::jaya ::jeska ::karn ::kasmina ::kaya ::kiora ::koth ::liliana ::lukka ::nahiri ::narset ::niko ::nissa ::nixilis ::oko ::ral ::rowan ::saheeli ::samut ::sarkhan ::serra ::sorin ::szat ::tamiyo ::teferi ::teyo ::tezzeret ::tibalt ::tyvar ::ugin ::venser ::vivien ::vraska ::will ::windgrace ::wrenn ::xenagos ::yanggu ::yanling})
 
 ;; 205.3k
 (s/def
@@ -282,11 +280,11 @@
 
 ;; 205.3m
 (s/def
-  ::creature-type #{::advisor ::aetherborn ::ally ::angel ::antelope ::ape ::archer ::archon ::army ::artificer ::assassin ::assembly-worker ::atog ::aurochs ::avatar ::azra ::badger ::barbarian ::basilisk ::bat ::bear ::beast ::beeble ::berserker ::bird ::blinkmoth ::boar ::bringer ::brushwagg ::camarid ::camel ::caribou ::carrier ::cat ::centaur ::cephalid ::chimera ::citizen ::cleric ::cockatrice ::construct ::coward ::crab ::crocodile ::cyclops ::dauthi ::demigod ::demon ::deserter ::devil ::dinosaur ::djinn ::dog ::dragon ::drake ::dreadnought ::drone ::druid ::dryad ::dwarf ::efreet ::egg ::elder ::eldrazi ::elemental ::elephant ::elf ::elk ::eye ::faerie ::ferret ::fish ::flagbearer ::fox ::frog ::fungus ::gargoyle ::germ ::giant ::gnome ::goat ::goblin ::god ::golem ::gorgon ::graveborn ::gremlin ::griffin ::hag ::harpy ::hellion ::hippo ::hippogriff ::homarid ::homunculus ::horror ::horse ::human ::hydra ::hyena ::illusion ::imp ::incarnation ::insect ::jackal ::jellyfish ::juggernaut ::kavu ::kirin ::kithkin ::knight ::kobold ::kor ::kraken ::lamia ::lammasu ::leech ::leviathan ::lhurgoyf ::licid ::lizard ::manticore ::masticore ::mercenary ::merfolk ::metathran ::minion ::minotaur ::mole ::monger ::mongoose ::monk ::monkey ::moonfolk ::mouse ::mutant ::myr ::mystic ::naga ::nautilus ::nephilim ::nightmare ::nightstalker ::ninja ::noble ::noggle ::nomad ::nymph ::octopus ::ogre ::ooze ::orb ::orc ::orgg ::otter ::ouphe ::ox ::oyster ::pangolin ::peasant ::pegasus ::pentavite ::pest ::phelddagrif ::phoenix ::pilot ::pincher ::pirate ::plant ::praetor ::prism ::processor ::rabbit ::rat ::rebel ::reflection ::rhino ::rigger ::rogue ::sable ::salamander ::samurai ::sand ::saproling ::satyr ::scarecrow ::scion ::scorpion ::scout ::sculpture ::serf ::serpent ::servo ::shade ::shaman ::shapeshifter ::shark ::sheep ::siren ::skeleton ::slith ::sliver ::slug ::snake ::soldier ::soltari ::spawn ::specter ::spellshaper ::sphinx ::spider ::spike ::spirit ::splinter ::sponge ::squid ::squirrel ::starfish ::surrakar ::survivor ::tentacle ::tetravite ::thalakos ::thopter ::thrull ::treefolk ::trilobite ::triskelavite ::troll ::turtle ::unicorn ::vampire ::vedalken ::viashino ::volver ::wall ::warlock ::warrior ::weird ::werewolf ::whale ::wizard ::wolf ::wolverine ::wombat ::worm ::wraith ::wurm ::yeti ::zombie ::zubera})
+  ::creature-type #{::advisor ::aetherborn ::ally ::angel ::antelope ::ape ::archer ::archon ::army ::artificer ::assassin ::assembly-worker ::atog ::aurochs ::avatar ::azra ::badger ::barbarian ::basilisk ::bat ::bear ::beast ::beeble ::berserker ::bird ::blinkmoth ::boar ::bringer ::brushwagg ::camarid ::camel ::caribou ::carrier ::cat ::centaur ::cephalid ::chimera ::citizen ::cleric ::cockatrice ::construct ::coward ::crab ::crocodile ::cyclops ::dauthi ::demigod ::demon ::deserter ::devil ::dinosaur ::djinn ::dog ::dragon ::drake ::dreadnought ::drone ::druid ::dryad ::dwarf ::efreet ::egg ::elder ::eldrazi ::elemental ::elephant ::elf ::elk ::eye ::faerie ::ferret ::fish ::flagbearer ::fox ::frog ::fungus ::gargoyle ::germ ::giant ::gnome ::goat ::goblin ::god ::golem ::gorgon ::graveborn ::gremlin ::griffin ::hag ::harpy ::hellion ::hippo ::hippogriff ::homarid ::homunculus ::horror ::horse ::human ::hydra ::hyena ::illusion ::imp ::incarnation ::insect ::jackal ::jellyfish ::juggernaut ::kavu ::kirin ::kithkin ::knight ::kobold ::kor ::kraken ::lamia ::lammasu ::leech ::leviathan ::lhurgoyf ::licid ::lizard ::manticore ::masticore ::mercenary ::merfolk ::metathran ::minion ::minotaur ::mole ::monger ::mongoose ::monk ::monkey ::moonfolk ::mouse ::mutant ::myr ::mystic ::naga ::nautilus ::nephilim ::nightmare ::nightstalker ::ninja ::noble ::noggle ::nomad ::nymph ::octopus ::ogre ::ooze ::orb ::orc ::orgg ::otter ::ouphe ::ox ::oyster ::pangolin ::peasant ::pegasus ::pentavite ::pest ::phelddagrif ::phoenix ::phyrexian ::pilot ::pincher ::pirate ::plant ::praetor ::prism ::processor ::rabbit ::rat ::rebel ::reflection ::rhino ::rigger ::rogue ::sable ::salamander ::samurai ::sand ::saproling ::satyr ::scarecrow ::scion ::scorpion ::scout ::sculpture ::serf ::serpent ::servo ::shade ::shaman ::shapeshifter ::shark ::sheep ::siren ::skeleton ::slith ::sliver ::slug ::snake ::soldier ::soltari ::spawn ::specter ::spellshaper ::sphinx ::spider ::spike ::spirit ::splinter ::sponge ::squid ::squirrel ::starfish ::surrakar ::survivor ::tentacle ::tetravite ::thalakos ::thopter ::thrull ::treefolk ::trilobite ::triskelavite ::troll ::turtle ::unicorn ::vampire ::vedalken ::viashino ::volver ::wall ::warlock ::warrior ::weird ::werewolf ::whale ::wizard ::wolf ::wolverine ::wombat ::worm ::wraith ::wurm ::yeti ::zombie ::zubera})
 
 ;; 205.3n
 (s/def
-  ::planar-type #{::alara ::arkhos ::azgol ::belenon ::bolas’s-meditation-realm ::dominaria ::equilor ::ergamon ::fabacin ::innistrad ::iquatana ::ir ::kaldheim ::kamigawa ::karsus ::kephalai ::kinshala ::kolbahan ::kyneth ::lorwyn ::luvion ::mercadia ::mirrodin ::moag ::mongseng ::muraganda ::new-phyrexia ::phyrexia ::pyrulea ::rabiah ::rath ::ravnica ::regatha ::segovia ::serra’s-realm ::shadowmoor ::shandalar ::ulgrotha ::valla ::vryn ::wildfire ::xerex ::zendikar})
+  ::planar-type #{::alara ::arkhos ::azgol ::belenon ::bolas-meditation-realm ::dominaria ::equilor ::ergamon ::fabacin ::innistrad ::iquatana ::ir ::kaldheim ::kamigawa ::karsus ::kephalai ::kinshala ::kolbahan ::kyneth ::lorwyn ::luvion ::mercadia ::mirrodin ::moag ::mongseng ::muraganda ::new-phyrexia ::phyrexia ::pyrulea ::rabiah ::rath ::ravnica ::regatha ::segovia ::serras-realm ::shadowmoor ::shandalar ::ulgrotha ::valla ::vryn ::wildfire ::xerex ::zendikar})
 
 ;; 205.4a
 (s/def
@@ -306,7 +304,7 @@
 
 ;; 207.2c
 (s/def
-  ::ability-word #{::adamant ::addendum ::battalion ::bloodrush ::channel ::chroma ::cohort ::constellation ::converge ::council’s-dilemma ::delirium ::domain ::eminence ::enrage ::fateful-hour ::ferocious ::formidable ::grandeur ::hellbent ::heroic ::imprint ::inspired ::join-forces ::kinship:: ::landfall ::lieutenant ::metalcraft ::morbid ::parley ::radiance ::raid ::rally ::revolt ::spell-mastery ::strive ::sweep ::tempting-offer ::threshold ::undergrowth ::will-of-the-council})
+  ::ability-word #{::adamant ::addendum ::battalion ::bloodrush ::channel ::chroma ::cohort ::constellation ::converge ::councils-dilemma ::delirium ::domain ::eminence ::enrage ::fateful-hour ::ferocious ::formidable ::grandeur ::hellbent ::heroic ::imprint ::inspired ::join-forces ::kinship ::landfall ::lieutenant ::metalcraft ::morbid ::parley ::radiance ::raid ::rally ::revolt ::spell-mastery ::strive ::sweep ::tempting-offer ::threshold ::undergrowth ::will-of-the-council})
 
 ;; 208: power and toughness
 
@@ -440,7 +438,7 @@
 
 ;; 601
 (s/def
-  ::spell-casting-steps (::being-allowed-to-cast ::propose-spell-to-cast ::determinate-legal-casting-cost ::pay-legal-casting-cost ::determinate-legal-target(s) ::choose-legal-target(s) ::move-card-to-stack))
+  ::spell-casting-steps (::being-allowed-to-cast ::propose-spell-to-cast ::determinate-legal-casting-cost ::pay-legal-casting-cost ::determinate-legal-target-or-targets ::choose-legal-target-or-targets ::move-card-to-stack))
 
 ;; 602-607
 (s/def
@@ -455,7 +453,7 @@
 
 ;; 602.2x
 (s/def
-  ::ability-activation-steps (::being-allowed-to-activate ::propose-ability-to-activate ::determinate-legal-activation-cost ::pay-legal-activation-cost ::determinate-legal-target(s) ::choose-legal-target(s) ::reveal-card-with-ability ::move-ability-to-stack))
+  ::ability-activation-steps (::being-allowed-to-activate ::propose-ability-to-activate ::determinate-legal-activation-cost ::pay-legal-activation-cost ::determinate-legal-target-or-targets ::choose-legal-target-or-targets ::reveal-card-with-ability ::move-ability-to-stack))
 
 ;; 603: triggered abilities
 (s/def
@@ -516,7 +514,7 @@
 
 ;; 702: keyword abilities
 (s/def
-  ::keyword-ability #{::deathtouch ::defender ::double-strike ::enchant ::encore ::equip ::first-strike ::flash ::flying ::haste ::hexproof ::indestructible ::intimidate ::landwalk ::lifelink ::protection ::reach ::shroud ::trample ::vigilance ::banding ::rampage ::cumulative-upkeep ::flanking ::flashback ::phasing ::buyback ::shadow ::cycling ::echo ::horsemanship ::fading ::kicker ::flashback ::madness ::fear ::morph ::amplify ::provoke ::storm ::affinity ::entwine ::modular ::sunburst ::bushido ::soulshift ::splice ::offering ::ninjutsu ::epic ::convoke ::dredge ::transmute ::bloodthirst ::haunt ::replicate ::forecast ::graft ::recover ::ripple ::split-second ::suspend ::vanishing ::absorb ::aura-swap ::delve ::fortify ::frenzy ::gravestorm ::poisonous ::transfigure ::champion ::changeling ::evoke ::hideaway ::prowl ::reinforce ::conspire ::persist ::wither ::retrace ::devour ::exalted ::unearth ::cascade ::annihilator ::level-up ::rebound ::totem-armor ::infect ::battle-cry ::living-weapon ::undying ::miracle ::soulbound ::overload ::scavenge ::unleash ::cipher ::evolve ::extort ::fuse ::bestow ::tribute ::dethrone ::hidden-agenda ::outlast ::prowess ::dash ::exploit ::menace ::renown ::awaken ::devoid ::ingest ::myriad ::surge ::skulk ::emerge ::escalate ::melee ::crew ::fabricate ::partner ::undaunted ::improvise ::aftermath ::embalm ::eternalize ::afflict ::assist ::jump-start ::mentor ::afterlife ::riot ::spectacle ::escape ::companion ::mutate})
+  ::keyword-ability #{::deathtouch ::defender ::double-strike ::enchant ::encore ::equip ::first-strike ::flash ::flying ::haste ::hexproof ::indestructible ::intimidate ::landwalk ::lifelink ::protection ::reach ::shroud ::trample ::vigilance ::banding ::rampage ::cumulative-upkeep ::flanking ::phasing ::buyback ::shadow ::cycling ::echo ::horsemanship ::fading ::kicker ::flashback ::madness ::fear ::morph ::amplify ::provoke ::storm ::affinity ::entwine ::modular ::sunburst ::bushido :soulshift ::splice ::offering ::ninjutsu ::epic ::convoke ::dredge ::transmute ::bloodthirst ::haunt ::replicate ::forecast ::graft ::recover ::ripple ::split-second ::suspend ::vanishing ::absorb ::aura-swap ::delve ::fortify ::frenzy ::gravestorm ::poisonous ::transfigure ::champion ::changeling ::evoke ::hideaway ::prowl ::reinforce ::conspire ::persist ::wither ::retrace ::devour ::exalted ::unearth ::cascade ::annihilator ::level-up ::rebound ::totem-armor ::infect ::battle-cry ::living-weapon ::undying ::miracle ::soulbound ::overload ::scavenge ::unleash ::cipher ::evolve ::extort ::fuse ::bestow ::tribute ::dethrone ::hidden-agenda ::outlast ::prowess ::dash ::exploit ::menace ::renown ::awaken ::devoid ::ingest ::myriad ::surge ::skulk ::emerge ::escalate ::melee ::crew ::fabricate ::partner ::undaunted ::improvise ::aftermath ::embalm ::eternalize ::afflict ::assist :jump-start ::mentor ::afterlife ::riot ::spectacle ::escape ::companion ::mutate ::encore ::boast ::foretell})
 
 ;; 703: stated-based actions
 ;; 704: turn-based actions
