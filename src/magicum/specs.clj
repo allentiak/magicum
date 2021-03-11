@@ -24,7 +24,8 @@
   (s/explain :land.basic/name "Any string outside the list fails")
 
   ;; works as expected
-  (s/explain :land.basic/name "Island"))
+  (s/explain :land.basic/name "Island")
+  ,)
 
 (s/def
   :card/name :land.basic/name)
@@ -41,13 +42,15 @@
 
   ;; works as expected
   ;; (will fail if keys are not fully qualified)
-  (s/explain :object/card {:card/name "Island"}))
+  (s/explain :object/card {:card/name "Island"})
+  ,)
 
 (def plains {:card/name "Plains"})
 
 (comment
   ;; works as expected
-  (s/explain :object/card plains))
+  (s/explain :object/card plains)
+  ,)
 
 (def island {:card/name "Island"})
 (def swamp {:card/name "Swamp"})
@@ -71,7 +74,8 @@
   (s/explain :game/zone [plains])
 
   ;; works as expected
-  (s/explain :zone/battlefield [mountain swamp plains]))
+  (s/explain :zone/battlefield [mountain swamp plains])
+  ,)
 
 (s/def
   :game/world (s/keys :req [:zone/hand :zone/battlefield]))
@@ -79,7 +83,8 @@
 (comment
   ;; works as expected
   (def my-world {:zone/hand [island forest plains swamp plains mountain] :zone/battlefield []})
-  (s/explain :game/world my-world))
+  (s/explain :game/world my-world)
+  ,)
 
 (s/fdef play-a-card
   :args (s/cat :world :game/world
@@ -92,14 +97,15 @@
 
 (comment
   (s/exercise-fn `play-a-card)
-  (play-a-card my-world 0 :zone/hand :zone/battlefield))
+  (play-a-card my-world 0 :zone/hand :zone/battlefield)
   ;; => #:magicum.specs.game{:hand
-;; (#:magicum.specs.game{:card-name "Forest"}
-;; #:magicum.specs.game{:card-name "Plains"}
-;; #:magicum.specs.game{:card-name "Swamp"}
-;; #:magicum.specs.game{:card-name "Plains"}
-;; #:magicum.specs.game{:card-name "Mountain"},
-;; :battlefield [#:magicum.specs.game{:card-name "Island"}]
+  ;; (#:magicum.specs.game{:card-name "Forest"}
+  ;; #:magicum.specs.game{:card-name "Plains"}
+  ;; #:magicum.specs.game{:card-name "Swamp"}
+  ;; #:magicum.specs.game{:card-name "Plains"}
+  ;; #:magicum.specs.game{:card-name "Mountain"},
+  ;; :battlefield [#:magicum.specs.game{:card-name "Island"}]
+  ,)
 
 
 (defn play-a-card
