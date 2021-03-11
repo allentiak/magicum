@@ -12,7 +12,8 @@
 (comment
   (require '[clojure.spec.alpha :as s]
            '[clojure.spec.test.alpha :as st]
-           '[magicum.utils :as utils]))
+           '[magicum.utils :as utils])
+  ,)
 
 (set! *warn-on-reflection* true)
 
