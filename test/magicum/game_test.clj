@@ -4,7 +4,20 @@
   Still trying to find out what to put in here..."
   (:require [clojure.test :refer [deftest is testing]]
             [magicum.game :as game]
-            [magicum.specs :as specs]))
+            [magicum.specs :as specs]
+            [clojure.spec.alpha :as s]
+            [clojure.spec.test.alpha :as st]
+            [clojure.spec.gen.alpha :as gen]))
+
+(comment
+  (require '[clojure.test :refer [deftest is testing]]
+           '[magicum.game :as game]
+           '[magicum.specs :as specs]
+           '[clojure.spec.alpha :as s]
+           '[clojure.spec.test.alpha :as st]
+           '[clojure.spec.gen.alpha :as gen])
+;; => nil
+  ,)
 
 (set! *warn-on-reflection* true)
 
