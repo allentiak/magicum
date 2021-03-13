@@ -21,11 +21,10 @@
 
 (comment
   ;; fails as expected
-  (s/explain :land.basic/name "Any string outside the list fails")
+  (s/valid? :land.basic/name "Any string outside the list fails")
 
   ;; works as expected
-  (s/explain :land.basic/name "Island")
-  ,)
+  (s/valid? :land.basic/name "Island"))
 
 (s/def
   :card/name :land.basic/name)
@@ -35,21 +34,17 @@
 
 (comment
   ;; fails as expected (name not in set)
-  (s/explain :object/card {:card/name "Fails"})
-
-  ;; fails as expected (key is not fully qualified)
-  (s/explain :object/card {:card/name "Island"})
+  (s/valid? :object/card {:card/name "Fails"})
 
   ;; works as expected
-  ;; (will fail if keys are not fully qualified)
-  (s/explain :object/card {:card/name "Island"})
-  ,)
+  ;; (used to fail if keys were not fully qualified)
+  (s/valid? :object/card {:card/name "Island"}))
 
 (def plains {:card/name "Plains"})
 
 (comment
   ;; works as expected
-  (s/explain :object/card plains)
+  (s/valid? :object/card plains)
   ,)
 
 (def island {:card/name "Island"})
@@ -68,14 +63,13 @@
 
 (comment
   ;; works as expected
-  (s/explain :game/zone [])
+  (s/valid? :game/zone [])
 
   ;; works as expected
-  (s/explain :game/zone [plains])
+  (s/valid? :game/zone [plains])
 
   ;; works as expected
-  (s/explain :zone/battlefield [mountain swamp plains])
-  ,)
+  (s/valid? :zone/battlefield [mountain swamp plains]))
 
 (s/def
   :game/world (s/keys :req [:zone/hand :zone/battlefield]))
@@ -83,5 +77,4 @@
 (comment
   ;; works as expected
   (def my-world {:zone/hand [island forest plains swamp plains mountain] :zone/battlefield []})
-  (s/explain :game/world my-world)
-  ,)
+  (s/valid? :game/world my-world))
