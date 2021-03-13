@@ -17,8 +17,13 @@
     (testing "world consistency"
       (is (= new-world (game/play-a-card old-world 0 :zone/hand :zone/battlefield))))))
 
-#_(magicum.specs.game/play-a-card
-   {:magicum.specs.game/hand        [{:magicum.specs.game/card-name "Island"}]
-    :magicum.specs.game/battlefield []}
-   0 :hand :battlefield)
-;; => {:magicum.specs.game/hand [#:magicum.specs.game{:card-name "Island"}], :magicum.specs.game/battlefield [], :hand (), :battlefield (nil)}
+(comment
+  (magicum.game/play-a-card
+   {:zone/hand
+     [{:card/name "Island"}]
+    :zone/battlefield []}
+   0
+   :hand
+   :battlefield)
+;; => {:zone/hand [#:card{:name "Island"}], :zone/battlefield [], :hand (), :battlefield (nil)}
+  ,)

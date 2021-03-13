@@ -53,15 +53,9 @@
 
   (instrument)
   ;; => [magicum.game/play-a-card]
-  (play-a-card my-world 0 :zone/hand :zone/battlefield))
-  ;; => #:magicum.specs.game{:hand
-  ;; (#:magicum.specs.game{:card-name "Forest"}
-  ;; #:magicum.specs.game{:card-name "Plains"}
-  ;; #:magicum.specs.game{:card-name "Swamp"}
-  ;; #:magicum.specs.game{:card-name "Plains"}
-  ;; #:magicum.specs.game{:card-name "Mountain"},
-  ;; :battlefield [#:magicum.specs.game{:card-name "Island"}]
-
+  (play-a-card my-world 0 :zone/hand :zone/battlefield)
+;; => #:zone{:hand (#:card{:name "Forest"} #:card{:name "Plains"} #:card{:name "Swamp"} #:card{:name "Plains"} #:card{:name "Mountain"}), :battlefield [#:card{:name "Island"}]}
+  ,)
 
 (def ^:private fns-with-specs
   [`play-a-card])
