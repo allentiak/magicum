@@ -58,7 +58,7 @@
 (def forest {:card/name "Forest"})
 
 (s/def
-  :game/zone (s/coll-of (s/nilable :object/card)))
+  :game/zone (s/coll-of :object/card))
 
 (s/def
   :zone/hand :game/zone)
