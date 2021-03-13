@@ -15,9 +15,11 @@
            '[clojure.spec.test.alpha :as st]
            '[magicum.specs :as specs]
            '[magicum.utils :as utils])
+;; => nil
   ,)
 
 (set! *warn-on-reflection* true)
+;; => true
 
 (s/fdef play-a-card
   :args (s/cat :world :game/world
@@ -27,6 +29,7 @@
   :ret :game/world
   :fn #(and (= (disj (:to-zone-name (:ret %)) :card-idx) (:to-zone-name %))
             (= (conj (:from-zone-name (:ret %)) :card-idx) (:from-zone-name %))))
+;; => magicum.game/play-a-card
 
 (defn play-a-card
   "Given a world, return a new one in which the idx-th card from one of its zones is moved to the other zone."
@@ -36,14 +39,21 @@
         new-from (utils/remove-first card from)
         new-to (conj (to-zone-name world) card)]
     (assoc world from-zone-name new-from to-zone-name new-to)))
+;; => #'magicum.game/play-a-card
 
 (comment
   (def plains {:card/name "Plains"})
+  ;; => #'magicum.game/plains
   (def island {:card/name "Island"})
+  ;; => #'magicum.game/island
   (def swamp {:card/name "Swamp"})
+  ;; => #'magicum.game/swamp
   (def mountain {:card/name "Mountain"})
+  ;; => #'magicum.game/mountain
   (def forest {:card/name "Forest"})
+  ;; => #'magicum.game/forest
   (def my-world {:zone/hand [island forest plains swamp plains mountain] :zone/battlefield []})
+  ;; => #'magicum.game/my-world
   (s/exercise-fn `play-a-card)
   ;; throws exception:
   ;;   1. Unhandled java.io.FileNotFoundException
@@ -59,9 +69,12 @@
 
 (def ^:private fns-with-specs
   [`play-a-card])
+;; => #'magicum.game/fns-with-specs
 
 (defn instrument []
   (st/instrument fns-with-specs))
+;; => #'magicum.game/instrument
 
 (defn unstrument []
   (st/unstrument fns-with-specs))
+;; => #'magicum.game/unstrument

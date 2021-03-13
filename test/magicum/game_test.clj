@@ -9,6 +9,7 @@
 (set! *warn-on-reflection* true)
 
 (game/instrument)
+;; => [magicum.game/play-a-card]
 
 (deftest basic-tests
   (let [card      {:card/name "Island"}
@@ -25,5 +26,14 @@
    0
    :hand
    :battlefield)
-;; => {:zone/hand [#:card{:name "Island"}], :zone/battlefield [], :hand (), :battlefield (nil)}
+  ;; => {:zone/hand [#:card{:name "Island"}], :zone/battlefield [], :hand (), :battlefield (nil)}
+
+  (s/exercise-fn `game/play-a-card)
+  ;; Unhandled java.io.FileNotFoundException
+  ;;
+  ;; Could not locate
+  ;; clojure/test/check/generators__init.class,
+  ;; clojure/test/check/generators.clj or
+  ;; clojure/test/check/generators.cljc
+  ;; on classpath.
   ,)
