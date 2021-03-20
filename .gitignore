@@ -6,3 +6,4 @@
 .cpcache
 /.nrepl-port
 /.nrepl-history
+doc/third-party/magic-comprehensive-rules--*
