@@ -52,7 +52,7 @@
   ;; => #'magicum.game/mountain
   (def forest {:card/name "Forest"})
   ;; => #'magicum.game/forest
-  (def my-world {:zone/hand [island forest plains swamp plains mountain] :zone/battlefield []})
+  (def my-world {:zone/hand [island forest plains plains swamp mountain] :zone/battlefield []})
   ;; => #'magicum.game/my-world
   (s/exercise-fn `play-a-card)
   ;; throws exception:
