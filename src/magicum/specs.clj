@@ -6,11 +6,13 @@
   (:gen-class)
   (:require [clojure.spec.alpha :as s]
             [clojure.spec.test.alpha :as st]
+            [clojure.spec.gen.alpha :as gen]
             [magicum.utils :as utils]))
 
 (comment
   (require '[clojure.spec.alpha :as s]
            '[clojure.spec.test.alpha :as st]
+           '[clojure.spec.gen.alpha :as gen]
            '[magicum.utils :as utils])
   ,)
   ;; => nil
@@ -50,6 +52,9 @@
   ;; (used to fail if keys were not fully qualified)
   (s/valid? :object/card {:card/name "Island"})
   ;; => true
+
+  (gen/sample (s/gen :object/card))
+;; => (#:card{:name "Island"} #:card{:name "Plains"} #:card{:name "Plains"} #:card{:name "Forest"} #:card{:name "Island"} #:card{:name "Mountain"} #:card{:name "Plains"} #:card{:name "Swamp"} #:card{:name "Swamp"} #:card{:name "Mountain"})
   ,)
 
 
