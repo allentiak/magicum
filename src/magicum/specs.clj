@@ -28,8 +28,9 @@
   ;; => false
 
   ;; works as expected
-  (s/valid? :land.basic/name "Island"))
-  ;; => true
+  (s/valid? :land.basic/name "Island")
+  ; => true
+  ,)
 
 
 (s/def
@@ -47,8 +48,9 @@
 
   ;; works as expected
   ;; (used to fail if keys were not fully qualified)
-  (s/valid? :object/card {:card/name "Island"}))
+  (s/valid? :object/card {:card/name "Island"})
   ;; => true
+  ,)
 
 
 (def plains {:card/name "Plains"})
@@ -91,8 +93,9 @@
 ;; => true
 
   ;; works as expected
-  (s/valid? :zone/battlefield [mountain swamp plains]))
-;; => true
+  (s/valid? :zone/battlefield [mountain swamp plains])
+  ;; => true
+  ,)
 
 (s/def
   :game/world (s/keys :req [:zone/hand :zone/battlefield]))
@@ -102,5 +105,6 @@
   ;; works as expected
   (def my-world {:zone/hand [island forest plains swamp plains mountain] :zone/battlefield []})
 ;; => #'magicum.specs/my-world
-  (s/valid? :game/world my-world))
-;; => true
+  (s/valid? :game/world my-world)
+  ;; => true
+  ,)
