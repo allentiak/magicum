@@ -42,6 +42,8 @@
   ;; => {:zone/hand [#:card{:name "Island"}], :zone/battlefield [], :hand (), :battlefield (nil)}
 
   (s/exercise-fn `game/transfer-card)
+  ;; If we don't use the ':test' modifier when starting the REPL, we get the following error:
+  ;;
   ;; Unhandled java.io.FileNotFoundException
   ;;
   ;; Could not locate
@@ -49,4 +51,8 @@
   ;; clojure/test/check/generators.clj or
   ;; clojure/test/check/generators.cljc
   ;; on classpath.
+  ;;
+  ;; This is because test.check must be dinamically loaded.
+  ;;
+  ;; Remember to always do a [SPC u , '], and add ":test" to the REPL starting command.
   ,)
