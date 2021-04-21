@@ -21,7 +21,7 @@
 (set! *warn-on-reflection* true)
 ;; => true
 
-(s/fdef play-a-card
+(s/fdef transfer-card
   :args (s/cat :world :game/world
                :card-idx nat-int?
                :from-zone-name keyword?
@@ -31,7 +31,7 @@
             (= (conj (:from-zone-name (:ret %)) :card-idx) (:from-zone-name %))))
 ;; => magicum.game/play-a-card
 
-(defn play-a-card
+(defn transfer-card
   "Given a world, return a new one in which the idx-th card from one of its zones is moved to the other zone."
   [world card-idx from-zone-name to-zone-name]
   (let [from (from-zone-name world)
@@ -68,7 +68,7 @@
   ,)
 
 (def ^:private fns-with-specs
-  [`play-a-card])
+  [`transfer-card])
 ;; => #'magicum.game/fns-with-specs
 
 (defn instrument []

@@ -29,7 +29,7 @@
         old-world {:zone/hand [card] :zone/battlefield []}
         new-world {:zone/hand [] :zone/battlefield [card]}]
     (testing "world consistency"
-      (is (= new-world (game/play-a-card old-world 0 :zone/hand :zone/battlefield))))))
+      (is (= new-world (game/transfer-card old-world 0 :zone/hand :zone/battlefield))))))
 
 (comment
   (magicum.game/play-a-card
@@ -41,7 +41,7 @@
    :battlefield)
   ;; => {:zone/hand [#:card{:name "Island"}], :zone/battlefield [], :hand (), :battlefield (nil)}
 
-  (s/exercise-fn `game/play-a-card)
+  (s/exercise-fn `game/transfer-card)
   ;; Unhandled java.io.FileNotFoundException
   ;;
   ;; Could not locate
