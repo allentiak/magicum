@@ -75,7 +75,7 @@ At this point, probably too many. To be discovered! :-)
   The Clean Architecture is (very entertainingly!) described in ["The Clean Architecture"](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), by Robert C. Martin (a.k.a. "Uncle Bob").
 
 
-## Acknowledgements
+## Other MtG implementations
 
 This program is inspired by other  Magic: The Gathering _libre_ implementations. It's great being able to get inspiration from these great, already-working projects!
 
@@ -92,6 +92,9 @@ Implementation (Backend + Frontend) | Strongest point
 [Matag (Java + JavaScript)](https://github.com/antonioalonzi/matag) | The best in-game UI, by far.
 [MvS' Magic (Haskell)](https://github.com/MedeaMelana/Magic) | Written in a fully-functional language, with a Client/Server architecture.
 [Forge (Java + Swing)](https://git.cardforge.org/core-developers/forge) | Best overall out-game UI design, and gameplay features.
+[ManaBrew (Rust, Tauri, and React)](https://github.com/witchesofthehill/manabrew) | (I haven't tried it yet. Added here only as a pointer so I don't forget it exists.)
+[phase.rs (Rust + WASM + React)](https://github.com/phase-rs/phase) | (I haven't tried it yet. Added here only as a pointer so I don't forget it exists.)
+[Argentum Engine (Kotlin)](https://github.com/wingedsheep/argentum-engine) | (I haven't tried it yet. Added here only as a pointer so I don't forget it exists.)
 
 As I couldn't find any FP Magic implementation written in Clojure, and given that I want to give [clojure.spec](https://clojure.org/about/spec) a try, I set up to write my own.
 
